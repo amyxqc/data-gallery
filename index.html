@@ -82,6 +82,58 @@ dd { margin: 0; color: var(--muted); }
 .sources .link a:hover { text-decoration: underline; }
 .subhead { margin: 24px 0 0; padding: 0 0 12px; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 700; }
 
+.contact { margin-top: 18px; }
+.cv-filters, .skills { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 18px; }
+.cv-filters button, .skills button { font: 500 12px/1 var(--sans); text-transform: uppercase; letter-spacing: .06em; background: #fff; color: var(--ink);
+  border: 1px solid var(--ink); padding: 8px 11px; cursor: pointer; }
+.cv-filters button:hover, .skills button:hover { border-color: var(--blue); color: var(--blue); }
+.cv-filters button[aria-pressed="true"], .skills button[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px 32px; align-items: start; margin: 28px 0 8px; padding: 22px 0; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+.sk-group { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.sk-group button { text-transform: none; letter-spacing: 0; font-size: 13px; padding: 6px 9px; border-color: var(--hair); }
+.sk-name { display: block; width: 100%; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; margin-bottom: 4px; }
+.cv-filters .sk-name { width: auto; margin: 0 6px 0 0; }
+.sk-status { grid-column: 1 / -1; margin: 0; font-size: 13px; color: var(--blue); min-height: 1.2em; }
+.timeline { border-top: 1px solid var(--ink); padding: 6px 0 4px; position: relative; overflow: hidden; isolation: isolate; }
+.tl-axis, .tl-row { display: grid; grid-template-columns: 230px 1fr; gap: 16px; align-items: center; width: 100%; }
+.tl-axis { height: 30px; }
+.tl-row { background: none; border: 0; padding: 0; height: 26px; cursor: pointer; font: inherit; color: inherit; text-align: left; transition: opacity .2s; }
+.tl-row:hover .tl-label { color: var(--blue); }
+.tl-label { font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tl-track { position: relative; height: 100%; }
+.tl-row .tl-track { background: linear-gradient(var(--hair), var(--hair)) center / 100% 1px no-repeat; }
+.tl-axis .tl-track span { position: absolute; top: 6px; transform: translateX(-50%); font-size: 11px; color: var(--muted); }
+.tl-axis .tl-track span::after { content: ""; position: absolute; left: 50%; top: 18px; height: 999px; border-left: 1px solid #eee; z-index: -1; }
+.today { position: absolute; top: 4px; transform: translateX(-50%); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: #fff; background: var(--blue); padding: 2px 5px; font-weight: 700; }
+.tlbar { position: absolute; top: 7px; height: 12px; }
+.t-education { background: #9aa3b2; } .t-experience { background: var(--navy); } .t-research { background: var(--blue); }
+.t-projects { background: #fff; border: 2px solid var(--blue); }
+.tlbar.live { border-right: 3px solid #fff; box-shadow: 3px 0 0 var(--blue); }
+.future { position: absolute; top: 12px; height: 2px; background: repeating-linear-gradient(90deg, #9aa3b2 0 5px, transparent 5px 9px); }
+.lg { display: inline-block; width: 18px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+.legend { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+.cv-list { margin-top: 8px; }
+.cv-item { display: grid; grid-template-columns: 230px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid var(--hair); transition: opacity .2s, background .4s; }
+.cv-when { font-size: 13px; color: var(--muted); }
+.cv-when .pnum { margin-bottom: 4px; }
+.cv-what h3 { margin: 0; font-size: 18px; line-height: 1.25; font-weight: 700; }
+.cv-org { margin: 3px 0 8px; font-size: 14px; color: var(--blue); }
+.cv-org a { text-decoration: none; } .cv-org a:hover { text-decoration: underline; }
+.cv-what ul { margin: 0 0 10px; padding-left: 18px; font-size: 15px; }
+.cv-what li { margin-bottom: 4px; }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 6px; }
+.tag { font-size: 11.5px; border: 1px solid var(--hair); padding: 2px 7px; color: var(--muted); }
+.tag.on { border-color: var(--blue); color: #fff; background: var(--blue); }
+.dim { opacity: .22; }
+.cv-item.hidden, .tl-row.hidden { display: none; }
+.cv-item.flash { background: #eaf1f8; }
+.cv-foot { font-size: 13px; color: var(--muted); border-top: 1px solid var(--hair); padding-top: 14px; margin: 0 0 24px; }
+@media (max-width: 720px) {
+  .tl-axis, .tl-row { grid-template-columns: 110px 1fr; gap: 8px; }
+  .tl-label { font-size: 11px; }
+  .cv-item { grid-template-columns: 1fr; gap: 4px; }
+}
+
 footer { padding: 64px 0 56px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; }
 footer .thanks { font-style: italic; text-transform: uppercase; color: var(--navy); font-size: clamp(18px, 2.4vw, 30px); line-height: 1.35; letter-spacing: .02em; }
 footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px; color: var(--muted); text-align: right; line-height: 1.8; }
@@ -111,7 +163,7 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
 <div class="wrap">
   <header class="top">
     <a class="brand" href="#">Amy X. Chen</a>
-    <nav><a href="#part1">Work</a><a href="#data">Data</a><a class="opt" href="#appendix">Appendix</a><a href="https://github.com/amyxqc" target="_blank" rel="noopener">GitHub ↗</a></nav>
+    <nav><a href="#resume">Résumé</a><a href="#part1">Work</a><a href="#data">Data</a><a class="opt" href="#appendix">Appendix</a><a href="https://github.com/amyxqc" target="_blank" rel="noopener">GitHub ↗</a></nav>
   </header>
 
   <section class="hero">
@@ -125,7 +177,56 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     </div>
   </section>
 
-  <nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li><a href="#part1"><span class="pnum">Part 1</span>Data-Driven Urban Systems &amp; Spatial Analytics</a><ol><li>1.1 Open-Data 3D City Modeling</li><li>1.2 A Time Series Estimate of Protected Lane Returns on Citi Bike Demand</li></ol></li><li><a href="#part2"><span class="pnum">Part 2</span>Urban Regeneration, Masterplanning &amp; Multimodal Integration</a><ol><li>2.1 Reimagine Manhattan: A Mathematical Modeling Approach for Superblock Development</li></ol></li><li><a href="#part3"><span class="pnum">Part 3</span>Climate Risk, Asset Analytics &amp; Socioeconomic Policy</a><ol><li>3.1 Climate Resiliency Modeling: Mobility Under Extreme Weather</li><li>3.2 Storytelling for Coastal Resilience: Staten Island North Shore</li><li>3.3 Trucks, Fumes, and Groceries</li><li>3.4 Spatial Regression: Rethinking Proximity and Risk in San Francisco</li><li>3.5 Policy Case Studies on Sustainable Cities</li><li>3.6 Housing Policy Alignment Analytics Using Sentiment Methods</li></ol></li><li><a href="#data"><span class="pnum">Part 4</span>Data Gallery</a><ol><li>Charts and interactive tools, every number sourced</li></ol></li><li><a href="#appendix"><span class="pnum">Appendix</span>Spatial Representation &amp; Field Observation</a><ol><li>Drawing, journalism, essays</li></ol></li></ol></nav>
+  <section class="part" id="resume">
+  <div class="part-main section">
+    <header class="part-open"><span class="pnum">Résumé</span><h2>Experience, research &amp; skills</h2>
+      <p>Click a bar to jump to that role, filter by type, or pick a skill to see where it was used.</p><div class="contact"><a class="cta" href="https://www.linkedin.com/in/amychenstudio/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="cta" href="https://github.com/amyxqc" target="_blank" rel="noopener">GitHub ↗</a><a class="cta" href="mailto:amyxiaoqianchen@gmail.com" target="_blank" rel="noopener">Email ↗</a></div></header>
+    <div class="cv-filters" role="group" aria-label="Filter by type"><span class="sk-name">Show</span><button data-type="" aria-pressed="true">All</button><button data-type="Education">Education</button><button data-type="Experience">Experience</button><button data-type="Research">Research</button><button data-type="Projects">Projects</button></div>
+    <div class="timeline"><div class="tl-axis"><span class="tl-label"></span><span class="tl-track"><span style="left:8.33%">2023</span><span style="left:25.00%">2024</span><span style="left:41.67%">2025</span><span style="left:58.33%">2026</span><span style="left:75.00%">2027</span><span style="left:91.67%">2028</span><b class="today" style="left:71.17%">Today</b></span></div><button class="tl-row" data-type="Education" data-tags="Data Science|ArcGIS Pro|Python" data-target="cv0"><span class="tl-label">Harvard GSD · MUP</span><span class="tl-track"><i class="tlbar t-education live" style="left:69.50%;width:1.67%"></i><i class="future" style="left:71.17%;width:27.17%"></i></span></button><button class="tl-row" data-type="Education" data-tags="Econometrics|Panel Regression" data-target="cv1"><span class="tl-label">Columbia · B.A. Economics</span><span class="tl-track"><i class="tlbar t-education" style="left:2.83%;width:62.17%"></i></span></button><button class="tl-row" data-type="Experience" data-tags="Climate Adaptation|Data Science|Policy Research" data-target="cv3"><span class="tl-label">Healthy Places Design Lab</span><span class="tl-track"><i class="tlbar t-experience live" style="left:69.50%;width:1.67%"></i></span></button><button class="tl-row" data-type="Experience" data-tags="ArcGIS Pro|QGIS|Stakeholder Communication" data-target="cv4"><span class="tl-label">Center for Geographic Analysis</span><span class="tl-track"><i class="tlbar t-experience live" style="left:69.50%;width:1.67%"></i></span></button><button class="tl-row" data-type="Experience" data-tags="Python|Data Science|Stakeholder Communication|SQL" data-target="cv2"><span class="tl-label">Block Party</span><span class="tl-track"><i class="tlbar t-experience live" style="left:63.83%;width:7.33%"></i></span></button><button class="tl-row" data-type="Experience" data-tags="Feasibility Analysis|Market Sizing|Scenario Planning|Infrastructure Strategy|Infrastructure Siting|Excel|PowerPoint" data-target="cv5"><span class="tl-label">Mormedi</span><span class="tl-track"><i class="tlbar t-experience" style="left:50.00%;width:2.83%"></i></span></button><button class="tl-row" data-type="Experience" data-tags="Policy Research|Municipal Sustainability|Decarbonization" data-target="cv6"><span class="tl-label">Columbia Climate School</span><span class="tl-track"><i class="tlbar t-experience" style="left:8.33%;width:41.67%"></i></span></button><button class="tl-row" data-type="Research" data-tags="Python|Econometrics|Data Science|Policy Research" data-target="cv8"><span class="tl-label">Public housing sentiment</span><span class="tl-track"><i class="tlbar t-research live" style="left:58.33%;width:12.83%"></i></span></button><button class="tl-row" data-type="Research" data-tags="Econometrics|Panel Regression|Python|Climate Adaptation|Data Science" data-target="cv7"><span class="tl-label">Urban Systems Engineering Lab</span><span class="tl-track"><i class="tlbar t-research live" style="left:47.17%;width:24.00%"></i></span></button><button class="tl-row" data-type="Research" data-tags="ArcGIS Pro|Illustrator|InDesign|Coastal Resilience|Econometrics" data-target="cv10"><span class="tl-label">SF coastal flood study</span><span class="tl-track"><i class="tlbar t-research" style="left:43.00%;width:5.67%"></i></span></button><button class="tl-row" data-type="Research" data-tags="Python|Multi-Criteria Analysis|Scenario Planning|Data Science" data-target="cv9"><span class="tl-label">Superblocks fellowship</span><span class="tl-track"><i class="tlbar t-research" style="left:32.00%;width:4.17%"></i></span></button><button class="tl-row" data-type="Projects" data-tags="Climate Adaptation|Multi-Criteria Analysis|Python|Data Science" data-target="cv11"><span class="tl-label">Google OASIS / SIGSPATIAL</span><span class="tl-track"><i class="tlbar t-projects live" style="left:68.00%;width:3.17%"></i></span></button><div class="legend"><span><i class="lg t-education"></i>Education</span><span><i class="lg t-experience"></i>Experience</span><span><i class="lg t-research"></i>Research</span><span><i class="lg t-projects"></i>Projects</span><span>White notch = ongoing · dashes = planned</span></div></div>
+    <div class="skills" role="group" aria-label="Highlight by skill"><div class="sk-group"><span class="sk-name">Advisory</span><button data-skill="Infrastructure Strategy">Infrastructure Strategy</button><button data-skill="Feasibility Analysis">Feasibility Analysis</button><button data-skill="Market Sizing">Market Sizing</button><button data-skill="Scenario Planning">Scenario Planning</button><button data-skill="Policy Research">Policy Research</button><button data-skill="Stakeholder Communication">Stakeholder Communication</button></div><div class="sk-group"><span class="sk-name">Energy &amp; Climate</span><button data-skill="Decarbonization">Decarbonization</button><button data-skill="Climate Adaptation">Climate Adaptation</button><button data-skill="Infrastructure Siting">Infrastructure Siting</button><button data-skill="Coastal Resilience">Coastal Resilience</button><button data-skill="Municipal Sustainability">Municipal Sustainability</button></div><div class="sk-group"><span class="sk-name">Quantitative</span><button data-skill="Econometrics">Econometrics</button><button data-skill="Difference-in-Differences">Difference-in-Differences</button><button data-skill="Panel Regression">Panel Regression</button><button data-skill="Multi-Criteria Analysis">Multi-Criteria Analysis</button><button data-skill="Data Science">Data Science</button></div><div class="sk-group"><span class="sk-name">Technical</span><button data-skill="Excel">Excel</button><button data-skill="PowerPoint">PowerPoint</button><button data-skill="ArcGIS Pro">ArcGIS Pro</button><button data-skill="QGIS">QGIS</button><button data-skill="Python">Python</button><button data-skill="R">R</button><button data-skill="SQL">SQL</button><button data-skill="Illustrator">Illustrator</button><button data-skill="InDesign">InDesign</button></div><p class="sk-status" aria-live="polite"></p></div>
+    <div class="cv-list"><article class="cv-item" id="cv0" data-type="Education" data-tags="Data Science|ArcGIS Pro|Python">
+  <div class="cv-when"><span class="pnum">Education</span>2026–2028<br>Cambridge, MA</div>
+  <div class="cv-what"><h3>Master in Urban Planning (MUP), Concentration in Urban Analytics</h3><p class="cv-org"><a href="https://www.gsd.harvard.edu/" target="_blank" rel="noopener">Harvard University, Graduate School of Design</a></p><ul><li>Coursework: Spatial Analysis, Data Science I, Land Use and Environmental Law, First-Year Urban Planning Studio</li></ul><div class="tags"><span class="tag">Data Science</span><span class="tag">ArcGIS Pro</span><span class="tag">Python</span></div></div>
+</article><article class="cv-item" id="cv1" data-type="Education" data-tags="Econometrics|Panel Regression">
+  <div class="cv-when"><span class="pnum">Education</span>2022–2026<br>New York, NY</div>
+  <div class="cv-what"><h3>B.A. Economics, Mathematical Probability</h3><p class="cv-org"><a href="https://www.college.columbia.edu/" target="_blank" rel="noopener">Columbia University, Columbia College</a></p><ul><li>GPA 3.889/4.00; Dean&#x27;s List, 6 semesters</li><li>Coursework: Modern Analysis I, ODE, Probability Theory, Linear Algebra, Calculus I–III, Urban Economics, Econometrics, Financial Economics, Market Design, Political Economics, Advanced GIS, Urban Infrastructure Systems, Sustainable Urban Systems Engineering</li></ul><div class="tags"><span class="tag">Econometrics</span><span class="tag">Panel Regression</span></div></div>
+</article><article class="cv-item" id="cv3" data-type="Experience" data-tags="Climate Adaptation|Data Science|Policy Research">
+  <div class="cv-when"><span class="pnum">Experience</span>Sept. 2026 – present</div>
+  <div class="cv-what"><h3>Research assistant</h3><p class="cv-org"><a href="https://research.gsd.harvard.edu/healthy/about/" target="_blank" rel="noopener">Harvard GSD, Healthy Places Design Lab</a></p><ul><li>Analyze public datasets to find built-environment proxies for heat vulnerability, and turn the findings into decision-support frameworks for planners and public-health stakeholders.</li></ul><div class="tags"><span class="tag">Climate Adaptation</span><span class="tag">Data Science</span><span class="tag">Policy Research</span></div></div>
+</article><article class="cv-item" id="cv4" data-type="Experience" data-tags="ArcGIS Pro|QGIS|Stakeholder Communication">
+  <div class="cv-when"><span class="pnum">Experience</span>Sept. 2026 – present</div>
+  <div class="cv-what"><h3>Peer mapping assistant</h3><p class="cv-org"><a href="https://guides.library.harvard.edu/gsd/gis" target="_blank" rel="noopener">Harvard GSD, Center for Geographic Analysis</a></p><ul><li>Technical GIS consultations on spatial data, ArcGIS Pro, QGIS, cartography and geospatial visualization for planning and design projects.</li></ul><div class="tags"><span class="tag">ArcGIS Pro</span><span class="tag">QGIS</span><span class="tag">Stakeholder Communication</span></div></div>
+</article><article class="cv-item" id="cv2" data-type="Experience" data-tags="Python|Data Science|Stakeholder Communication|SQL">
+  <div class="cv-when"><span class="pnum">Experience</span>May 2026 – present</div>
+  <div class="cv-what"><h3>Product development intern</h3><p class="cv-org"><a href="https://blockparty.studio/" target="_blank" rel="noopener">Block Party (civic tech startup)</a></p><ul><li>Turned a 22-year archive of 4,589 Manhattan Community Board 3 resolutions into a quality-controlled geospatial dataset, with automated extraction, multi-geocoder validation and confidence scoring to map land-use, capital and service priorities; the pipeline scaled to all 59 NYC community boards.</li><li>Presented the product to Harvard Data-Smart City Solutions fellows, industry professionals and NYC public agencies.</li></ul><div class="tags"><span class="tag">Python</span><span class="tag">Data Science</span><span class="tag">Stakeholder Communication</span><span class="tag">SQL</span></div></div>
+</article><article class="cv-item" id="cv5" data-type="Experience" data-tags="Feasibility Analysis|Market Sizing|Scenario Planning|Infrastructure Strategy|Infrastructure Siting|Excel|PowerPoint">
+  <div class="cv-when"><span class="pnum">Experience</span>Jul. – Aug. 2025<br>Madrid</div>
+  <div class="cv-what"><h3>Business innovation &amp; strategy intern</h3><p class="cv-org"><a href="https://mormedi.com/" target="_blank" rel="noopener">Mormedi (strategic design and innovation consultancy)</a></p><ul><li>Comparative infrastructure-feasibility analysis of international aerial tramway systems (operating costs, ridership, first/last-mile integration) to support corridor and service recommendations for Madrid&#x27;s regional transit agency.</li><li>Market sizing and demand analysis for Seattle eVTOL networks, with phased deployment scenarios reflecting regulatory, network and siting constraints.</li></ul><div class="tags"><span class="tag">Feasibility Analysis</span><span class="tag">Market Sizing</span><span class="tag">Scenario Planning</span><span class="tag">Infrastructure Strategy</span><span class="tag">Infrastructure Siting</span><span class="tag">Excel</span><span class="tag">PowerPoint</span></div></div>
+</article><article class="cv-item" id="cv6" data-type="Experience" data-tags="Policy Research|Municipal Sustainability|Decarbonization">
+  <div class="cv-when"><span class="pnum">Experience</span>2023–2025</div>
+  <div class="cv-what"><h3>Research assistant &amp; curriculum co-developer</h3><p class="cv-org"><a href="https://spm.ei.columbia.edu/" target="_blank" rel="noopener">Columbia Climate School, Sustainability Policy &amp; Management</a></p><ul><li>Benchmarked municipal climate policies and sustainability indicators across Lima and Copenhagen; research synthesized for reports presented at COP29 and COP30.</li><li>Developed a 200-page sustainable-cities module on municipal waste infrastructure (material recovery, landfill diversion, sanitation, implementation economics); funded by Tencent.</li></ul><div class="tags"><span class="tag">Policy Research</span><span class="tag">Municipal Sustainability</span><span class="tag">Decarbonization</span></div><a class="cta" href="#p3-5">See project 3.5 ↓</a></div>
+</article><article class="cv-item" id="cv8" data-type="Research" data-tags="Python|Econometrics|Data Science|Policy Research">
+  <div class="cv-when"><span class="pnum">Research</span>2026 – present</div>
+  <div class="cv-what"><h3>Sole author &amp; presenter: From Reform to Crisis, sentiment on public housing in the Lower East Side, 1900–2026</h3><p class="cv-org"><a href="https://www.urbansystems.org/" target="_blank" rel="noopener">2026 NYU Urban Systems Symposium</a></p><ul><li>Built a 10,118-article corpus from the New York Times Archive API (1900–2026); VADER sentiment scoring and Bai–Perron structural-break detection to find shifts in public discourse on public housing.</li><li>Presented at the 2026 NYU Urban Systems Symposium; manuscript published in the conference proceedings.</li></ul><div class="tags"><span class="tag">Python</span><span class="tag">Econometrics</span><span class="tag">Data Science</span><span class="tag">Policy Research</span></div><a class="cta" href="https://drive.google.com/file/d/1-h_5GU0o9CMggMpZVelG0SL4L0yKTsKX/view?usp=drive_link" target="_blank" rel="noopener">Paper ↗</a><a class="cta" href="#p3-6">See project 3.6 ↓</a></div>
+</article><article class="cv-item" id="cv7" data-type="Research" data-tags="Econometrics|Panel Regression|Python|Climate Adaptation|Data Science">
+  <div class="cv-when"><span class="pnum">Research</span>May 2025 – present</div>
+  <div class="cv-what"><h3>Contributing author: Multi-Modal Transit Resilience Under Climate Disruption</h3><p class="cv-org"><a href="https://urbansystems.civil.columbia.edu/" target="_blank" rel="noopener">Columbia Urban Systems Engineering Lab</a></p><ul><li>Built origin–destination flow matrices and used NYC wildfire-haze AQI spikes as a natural experiment to estimate cross-modal (bikeshare, bus, taxi, subway) demand elasticity and neighborhood rerouting vulnerability.</li></ul><div class="tags"><span class="tag">Econometrics</span><span class="tag">Panel Regression</span><span class="tag">Python</span><span class="tag">Climate Adaptation</span><span class="tag">Data Science</span></div><a class="cta" href="https://drive.google.com/file/d/1AkRwJ-cImbqnMmaf5PlQFDTkgafBCk2o/view?usp=drive_link" target="_blank" rel="noopener">Paper ↗</a><a class="cta" href="#p3-1">See project 3.1 ↓</a></div>
+</article><article class="cv-item" id="cv10" data-type="Research" data-tags="ArcGIS Pro|Illustrator|InDesign|Coastal Resilience|Econometrics">
+  <div class="cv-when"><span class="pnum">Research</span>Feb. – May 2025</div>
+  <div class="cv-what"><h3>Co-author: Coastal Flood Exposure &amp; Property Value Analysis, San Francisco</h3><p class="cv-org">Columbia, Advanced GIS</p><ul><li>Modeled 1D–3D terrain-based flood exposure and tested its relationship with property values and socioeconomic indicators; designed and presented a 20-page planning report.</li></ul><div class="tags"><span class="tag">ArcGIS Pro</span><span class="tag">Illustrator</span><span class="tag">InDesign</span><span class="tag">Coastal Resilience</span><span class="tag">Econometrics</span></div><a class="cta" href="https://drive.google.com/file/d/1BqPKEWmBnimYSclj0AX5N90b_o3-FK8V/view?usp=drive_link" target="_blank" rel="noopener">Paper ↗</a><a class="cta" href="#p3-4">See project 3.4 ↓</a></div>
+</article><article class="cv-item" id="cv9" data-type="Research" data-tags="Python|Multi-Criteria Analysis|Scenario Planning|Data Science">
+  <div class="cv-when"><span class="pnum">Research</span>2024</div>
+  <div class="cv-what"><h3>Summer fellow: Superblock Feasibility &amp; Street Network Topology, Manhattan</h3><p class="cv-org"><a href="https://www.math.columbia.edu/" target="_blank" rel="noopener">Columbia Department of Mathematics</a></p><ul><li>Modeled Manhattan as a graph of 5,000+ intersections and road segments with OpenStreetMap features and distances to build a Superblock Suitability Score, and simulated a phased implementation.</li></ul><div class="tags"><span class="tag">Python</span><span class="tag">Multi-Criteria Analysis</span><span class="tag">Scenario Planning</span><span class="tag">Data Science</span></div><a class="cta" href="https://drive.google.com/file/d/1SHRVUvXCO7C6RyFkHuOWgzqmxpmTrb0L/view?usp=drive_link" target="_blank" rel="noopener">Paper ↗</a><a class="cta" href="#p2-1">See project 2.1 ↓</a></div>
+</article><article class="cv-item" id="cv11" data-type="Projects" data-tags="Climate Adaptation|Multi-Criteria Analysis|Python|Data Science">
+  <div class="cv-when"><span class="pnum">Projects</span>Aug. 2026 – present</div>
+  <div class="cv-what"><h3>Google OASIS 2026 Student Challenge, First Place (Round 1)</h3><p class="cv-org"><a href="https://sigspatial2026.sigspatial.org/" target="_blank" rel="noopener">ACM SIGSPATIAL 2026</a></p><ul><li>Co-authored A Dimension-Preserving AI Assistant for Flood Mitigation: Multi-Scale Pareto Analysis in Chicago, a decision-support framework for comparing interventions across spatial scales.</li><li>Awarded a $1,000 Google DeepMind Student Travel Grant to represent the team at ACM SIGSPATIAL 2026.</li></ul><div class="tags"><span class="tag">Climate Adaptation</span><span class="tag">Multi-Criteria Analysis</span><span class="tag">Python</span><span class="tag">Data Science</span></div></div>
+</article></div>
+    <p class="cv-foot">Languages: English, Mandarin (native)</p>
+  </div>
+  <aside class="rail" aria-hidden="true"><span>Résumé</span></aside>
+</section>
+
+  <nav class="toc" aria-label="Contents"><h2>Contents</h2><ol><li><a href="#resume"><span class="pnum">Résumé</span>Experience, Research &amp; Skills</a><ol><li>Interactive timeline, filterable by skill</li></ol></li><li><a href="#part1"><span class="pnum">Part 1</span>Data-Driven Urban Systems &amp; Spatial Analytics</a><ol><li>1.1 Open-Data 3D City Modeling</li><li>1.2 A Time Series Estimate of Protected Lane Returns on Citi Bike Demand</li></ol></li><li><a href="#part2"><span class="pnum">Part 2</span>Urban Regeneration, Masterplanning &amp; Multimodal Integration</a><ol><li>2.1 Reimagine Manhattan: A Mathematical Modeling Approach for Superblock Development</li></ol></li><li><a href="#part3"><span class="pnum">Part 3</span>Climate Risk, Asset Analytics &amp; Socioeconomic Policy</a><ol><li>3.1 Climate Resiliency Modeling: Mobility Under Extreme Weather</li><li>3.2 Storytelling for Coastal Resilience: Staten Island North Shore</li><li>3.3 Trucks, Fumes, and Groceries</li><li>3.4 Spatial Regression: Rethinking Proximity and Risk in San Francisco</li><li>3.5 Policy Case Studies on Sustainable Cities</li><li>3.6 Housing Policy Alignment Analytics Using Sentiment Methods</li></ol></li><li><a href="#data"><span class="pnum">Part 4</span>Data Gallery</a><ol><li>Charts and interactive tools, every number sourced</li></ol></li><li><a href="#appendix"><span class="pnum">Appendix</span>Spatial Representation &amp; Field Observation</a><ol><li>Drawing, journalism, essays</li></ol></li></ol></nav>
 
   <section class="part" id="part1">
   <div class="part-main">
@@ -293,8 +394,8 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
 </article>
 <article class="card">
   <div class="card-head"><span class="pnum">M3</span></div>
-  <a class="frame" href="work/essays.jpg" target="_blank" rel="noopener"><img src="work/essays.jpg" alt="Load-Bearing &amp; Other Essays" loading="lazy"></a>
-  <h3>Load-Bearing &amp; Other Essays</h3><p class="takeaway">Essays in Urban AI, the Columbia Daily Spectator, Barnard Columbia Urban Review and the NZ Institute of Architects, plus a Substack, Load-Bearing.</p>
+  <a class="frame" href="work/essays.jpg" target="_blank" rel="noopener"><img src="work/essays.jpg" alt="The Algorithmic Commons &amp; Other Essays" loading="lazy"></a>
+  <h3>The Algorithmic Commons &amp; Other Essays</h3><p class="takeaway">Essays in Urban AI, the Columbia Daily Spectator, Barnard Columbia Urban Review and the NZ Institute of Architects, plus a Substack, The Algorithmic Commons.</p>
 </article></div>
     </div>
     <aside class="rail" aria-hidden="true"><span>Methodology Appendix</span></aside>
@@ -305,5 +406,39 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <div class="fine">© Amy X. Chen<br><a href="https://github.com/amyxqc" target="_blank" rel="noopener">github.com/amyxqc</a></div>
   </footer>
 </div>
+<script>
+(() => {
+  const rows = [...document.querySelectorAll(".tl-row")], items = [...document.querySelectorAll(".cv-item")];
+  const typeBtns = [...document.querySelectorAll(".cv-filters button")], skillBtns = [...document.querySelectorAll(".skills button")];
+  const status = document.querySelector(".sk-status");
+  let type = "", skill = "";
+  function apply() {
+    let n = 0;
+    for (const el of [...rows, ...items]) {
+      el.classList.toggle("hidden", !!type && el.dataset.type !== type);
+      const hit = !skill || el.dataset.tags.split("|").includes(skill);
+      el.classList.toggle("dim", !hit);
+      if (hit && skill && el.classList.contains("cv-item") && !el.classList.contains("hidden")) n++;
+    }
+    document.querySelectorAll(".tag").forEach(t => t.classList.toggle("on", !!skill && t.textContent === skill));
+    status.textContent = !skill ? "" : n ? `${skill}: used in ${n} ${n === 1 ? "entry" : "entries"}` : `${skill}: listed skill, not tied to one entry below`;
+  }
+  typeBtns.forEach(b => b.addEventListener("click", () => {
+    type = b.dataset.type; typeBtns.forEach(x => x.setAttribute("aria-pressed", x === b)); apply();
+  }));
+  skillBtns.forEach(b => {
+    b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", () => {
+      skill = skill === b.dataset.skill ? "" : b.dataset.skill;
+      skillBtns.forEach(x => x.setAttribute("aria-pressed", x.dataset.skill === skill)); apply();
+    });
+  });
+  rows.forEach(r => r.addEventListener("click", () => {
+    const el = document.getElementById(r.dataset.target);
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.classList.add("flash"); setTimeout(() => el.classList.remove("flash"), 1400);
+  }));
+})();
+</script>
 </body>
 </html>
