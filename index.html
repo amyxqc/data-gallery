@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Amy X. Chen — Work &amp; Data</title>
+<title>Amy X. Chen — AI, cities and the decisions in between</title>
 <meta name="description" content="Portfolio and data gallery of Amy X. Chen: applied AI and data for real estate, infrastructure and urban planning.">
 <style>
 :root {
@@ -22,12 +22,40 @@ a { color: inherit; }
 .top nav a { text-decoration: none; margin-left: 28px; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 500; }
 .top nav a:hover { color: var(--blue); }
 
-.hero { padding: 88px 0 72px; border-bottom: 1px solid var(--ink); display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: end; }
-.hero h1 { margin: 0; color: var(--navy); font-weight: 700; text-transform: uppercase; font-size: clamp(54px, 9vw, 140px); line-height: .9; letter-spacing: -.02em; }
-.hero .edu { margin: 22px 0 0; font-style: italic; text-transform: uppercase; color: var(--navy); font-size: clamp(12px, 1.2vw, 15px); letter-spacing: .03em; line-height: 1.6; }
-.hero .statement { margin: 0; font-size: clamp(19px, 1.7vw, 24px); line-height: 1.38; }
-.hero .statement strong { color: var(--blue); }
-.hero blockquote { margin: 28px 0 0; font-style: italic; text-transform: uppercase; font-size: 12px; letter-spacing: .03em; line-height: 1.6; color: var(--muted); max-width: 46ch; }
+.hero { padding: 72px 0 40px; border-bottom: 1px solid var(--ink); }
+.kicker { margin: 0 0 22px; color: var(--blue); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: 13px; }
+.hook { margin: 0; max-width: 21ch; color: var(--navy); font-weight: 700; font-size: clamp(40px, 6.4vw, 96px); line-height: .98; letter-spacing: -.025em; }
+.hero-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--hair); align-items: start; }
+.name { margin: 0; color: var(--navy); font-weight: 700; text-transform: uppercase; font-size: 30px; letter-spacing: .01em; }
+.edu { margin: 8px 0 0; font-style: italic; text-transform: uppercase; color: var(--navy); font-size: 13px; letter-spacing: .03em; line-height: 1.6; }
+.now { margin: 0 0 20px; font-size: 16px; line-height: 1.5; }
+.hero-cta { margin: 0; display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; }
+.hero-cta .cta { margin: 0; }
+.btn { display: inline-block; background: var(--blue); color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: 12.5px; padding: 13px 18px; }
+.btn:hover { background: var(--navy); }
+.hero blockquote { margin: 40px 0 0; font-style: italic; text-transform: uppercase; font-size: 11.5px; letter-spacing: .03em; color: var(--muted); max-width: 90ch; }
+
+.band { padding: 64px 0; border-bottom: 1px solid var(--ink); }
+.band-head { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+.band-head .pnum { font-size: 13px; margin: 0; }
+.band-head p { margin: 0; color: var(--muted); font-size: 14px; }
+.band-head h2 { margin: 0; width: 100%; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.05; text-transform: uppercase; font-weight: 700; }
+.findings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.finding { display: block; padding: 26px 28px 30px 0; border-bottom: 1px solid var(--hair); text-decoration: none; color: inherit; }
+.finding:nth-child(3n+2), .finding:nth-child(3n+3) { padding-left: 28px; border-left: 1px solid var(--hair); }
+.finding .big { display: block; font-size: clamp(52px, 5.6vw, 84px); line-height: 1; font-weight: 700; color: var(--navy); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.finding p { margin: 14px 0 12px; font-size: 16px; line-height: 1.45; max-width: 36ch; }
+.finding .more { font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: 11.5px; color: var(--blue); }
+.finding:hover .big { color: var(--blue); }
+.lanes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.lane { padding: 24px 24px 28px 0; display: flex; flex-direction: column; }
+.lane + .lane { padding-left: 24px; border-left: 1px solid var(--hair); }
+.lane h3 { margin: 6px 0 14px; font-size: 21px; line-height: 1.22; font-weight: 700; }
+.bring { margin: 0 0 12px; font-size: 14.5px; color: var(--muted); }
+.lane-links { margin: 0 0 20px; font-size: 13.5px; }
+.lane-links a { color: var(--blue); text-decoration: none; }
+.lane-links a:hover { text-decoration: underline; }
+.lane .btn { margin-top: auto; align-self: flex-start; }
 
 .toc { display: grid; grid-template-columns: 220px 1fr; gap: 40px; padding: 48px 0; border-bottom: 1px solid var(--ink); }
 .toc h2 { margin: 0; font-size: 22px; text-transform: uppercase; }
@@ -139,6 +167,9 @@ footer .thanks { font-style: italic; text-transform: uppercase; color: var(--nav
 footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px; color: var(--muted); text-align: right; line-height: 1.8; }
 
 @media (max-width: 1100px) {
+  .lanes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lane:nth-child(3) { padding-left: 0; border-left: 0; }
+  .lane:nth-child(n+3) { border-top: 1px solid var(--hair); }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project { grid-template-columns: 1fr; }
   .shots { grid-column: 1; }
@@ -147,7 +178,11 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
   .wrap { padding: 0 16px; }
   .top nav a { margin-left: 14px; }
   .top nav a.opt { display: none; }
-  .hero { grid-template-columns: 1fr; padding: 48px 0 40px; gap: 28px; }
+  .hero { padding: 44px 0 32px; }
+  .hero-foot { grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }
+  .findings, .lanes { grid-template-columns: 1fr; }
+  .finding, .finding:nth-child(3n+2), .finding:nth-child(3n+3), .lane, .lane + .lane, .lane:nth-child(3) { padding-left: 0; border-left: 0; padding-right: 0; }
+  .lane + .lane { border-top: 1px solid var(--hair); }
   .toc { grid-template-columns: 1fr; gap: 20px; }
   .part { grid-template-columns: 1fr; }
   .rail { display: none; }
@@ -163,19 +198,43 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
 <div class="wrap">
   <header class="top">
     <a class="brand" href="#">Amy X. Chen</a>
-    <nav><a href="#resume">Résumé</a><a href="#part1">Work</a><a href="#data">Data</a><a class="opt" href="#appendix">Appendix</a><a href="https://github.com/amyxqc" target="_blank" rel="noopener">GitHub ↗</a></nav>
+    <nav><a class="opt" href="#found">Findings</a><a href="#talk">Talk</a><a href="#resume">Résumé</a><a href="#part1">Work</a><a href="#data">Data</a><a class="opt" href="#appendix">Appendix</a><a href="https://github.com/amyxqc" target="_blank" rel="noopener">GitHub ↗</a></nav>
   </header>
 
   <section class="hero">
-    <div>
-      <h1>Amy X. Chen</h1>
-      <p class="edu">Harvard Graduate School of Design | Master in Urban Planning ’28<br>Columbia University | B.A. Economics–Mathematical Probability ’26</p>
+    <p class="kicker">Urban planner · economist · builder</p>
+    <h1 class="hook">Cities run on decisions buried in public records. I build AI that reads them, and study where it should stop.</h1>
+    <div class="hero-foot">
+      <div><p class="name">Amy X. Chen</p><p class="edu">Harvard Graduate School of Design | Master in Urban Planning ’28<br>Columbia University | B.A. Economics–Mathematical Probability ’26</p></div>
+      <div><p class="now">Now: Master in Urban Planning at Harvard GSD · research assistant, Healthy Places Design Lab · Google DeepMind travel grant to ACM SIGSPATIAL 2026 · writing The Algorithmic Commons</p>
+        <p class="hero-cta"><a class="btn" href="mailto:amyxiaoqianchen@gmail.com?subject=Hello%20(from%20your%20site)">Start a conversation →</a><a class="cta" href="#found">What I found ↓</a><a class="cta" href="#resume">Résumé ↓</a></p></div>
     </div>
-    <div>
-      <p class="statement">I build data and AI tools that help real estate, infrastructure and planning decisions move faster and rest on better evidence: open 3D city models, civic data pipelines, and economic analysis of climate risk.</p>
-      <blockquote>“A city is the place of availabilities. It is the place where a small boy, as he walks through it, may see something that will tell him what he wants to do his whole life.”<br>— Louis Kahn</blockquote>
-    </div>
+    <blockquote>“A city is the place of availabilities. It is the place where a small boy, as he walks through it, may see something that will tell him what he wants to do his whole life.” — Louis Kahn</blockquote>
   </section>
+
+  <section class="band" id="found">
+  <header class="band-head"><span class="pnum">Six things I found</span><p>Each one links to the work behind it.</p></header>
+  <div class="findings"><a class="finding" href="#data"><span class="big">&lt; ½</span>
+  <p>of the wait for a New York renewable-energy siting permit is covered by its 1-year legal deadline. The rest happens before the clock starts.</p><span class="more">See the chart →</span></a><a class="finding" href="#data"><span class="big">40×</span>
+  <p>more of Chicago sits in the 100-year flood zone on a private flood model than on FEMA&#x27;s map. Buyers now see the private score next to the price.</p><span class="more">See the chart →</span></a><a class="finding" href="#p1-2"><span class="big" data-count="116">116</span>
+  <p>more Citi Bike trips a day for each added mile of protected bike lane in New York.</p><span class="more">Project 1.2 →</span></a><a class="finding" href="#p1-1"><span class="big" data-count="61228">61,228</span>
+  <p>Auckland buildings given heights from open LiDAR and rendered in a browser, no software license needed.</p><span class="more">Project 1.1 →</span></a><a class="finding" href="#p3-6"><span class="big" data-count="126">126</span>
+  <p>years of New York Times housing coverage, scored to find when the story of public housing turned from reform to crisis.</p><span class="more">Project 3.6 →</span></a><a class="finding" href="#resume"><span class="big">1st</span>
+  <p>place in Round 1 of the Google OASIS challenge at ACM SIGSPATIAL 2026, with an AI assistant for flood mitigation.</p><span class="more">Résumé →</span></a></div>
+</section>
+
+  <section class="band" id="talk">
+  <header class="band-head"><span class="pnum">Let's talk</span><h2>Four questions I want to work on, maybe with you</h2></header>
+  <div class="lanes"><article class="lane"><span class="pnum">AI safety &amp; governance</span>
+  <h3>When AI pre-screens a permit or scores a neighborhood&#x27;s risk, who answers for what it leaves out?</h3><p class="bring">Evidence on where AI actually speeds up public decisions and where it shouldn&#x27;t decide, plus the econometrics to measure its effects.</p><p class="lane-links"><a href="#data">Permitting evidence</a> · <a href="#p3-6">Housing discourse study</a></p>
+  <a class="btn" href="mailto:amyxiaoqianchen@gmail.com?subject=AI%20governance%20and%20cities%20%28from%20your%20site%29">Talk about this →</a></article><article class="lane"><span class="pnum">Tech &amp; geospatial AI</span>
+  <h3>Can AI that reads maps, records and street imagery be checked against what is actually on the ground?</h3><p class="bring">Pipelines from messy public data to working geospatial products: LiDAR, OpenStreetMap, trip flows, archives.</p><p class="lane-links"><a href="#p1-1">Open 3D city model</a> · <a href="#resume">SIGSPATIAL flood assistant</a></p>
+  <a class="btn" href="mailto:amyxiaoqianchen@gmail.com?subject=Geospatial%20AI%20%28from%20your%20site%29">Talk about this →</a></article><article class="lane"><span class="pnum">Planning &amp; the public sector</span>
+  <h3>Which steps in an approval can become checkable rules, and which never should?</h3><p class="bring">Planning training at Harvard GSD and tools built to be adopted by agencies and community boards, not just published.</p><p class="lane-links"><a href="#data">Permitting chart</a> · <a href="#p2-1">Superblocks model</a></p>
+  <a class="btn" href="mailto:amyxiaoqianchen@gmail.com?subject=Planning%20and%20permitting%20%28from%20your%20site%29">Talk about this →</a></article><article class="lane"><span class="pnum">Real estate &amp; infrastructure</span>
+  <h3>If private risk scores already move prices, and data centers are the new land rush, who sets the numbers?</h3><p class="bring">Economics and spatial analysis of risk, value and siting, from San Francisco&#x27;s waterfront to Chicago&#x27;s flood maps.</p><p class="lane-links"><a href="#p3-4">SF flood and property values</a> · <a href="#data">Chicago flood chart</a></p>
+  <a class="btn" href="mailto:amyxiaoqianchen@gmail.com?subject=Real%20estate%2C%20risk%20and%20infrastructure%20%28from%20your%20site%29">Talk about this →</a></article></div>
+</section>
 
   <section class="part" id="resume">
   <div class="part-main section">
@@ -403,10 +462,22 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
 
   <footer>
     <div class="thanks">Thank you · 谢谢 · Merci · Gracias · धन्यवाद · <bdi dir="rtl" lang="ar">شكرًا</bdi> · Ngā mihi</div>
-    <div class="fine">© Amy X. Chen<br><a href="https://github.com/amyxqc" target="_blank" rel="noopener">github.com/amyxqc</a></div>
+    <div class="fine"><a class="btn" href="mailto:amyxiaoqianchen@gmail.com?subject=Hello%20(from%20your%20site)">Start a conversation →</a><br><br>© Amy X. Chen<br><a href="https://github.com/amyxqc" target="_blank" rel="noopener">github.com/amyxqc</a></div>
   </footer>
 </div>
 <script>
+(() => {
+  const nums = document.querySelectorAll("[data-count]");
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    io.unobserve(e.target);
+    const el = e.target, end = +el.dataset.count, t0 = performance.now(), fmt = n => n.toLocaleString("en-US");
+    const step = t => { const p = Math.min((t - t0) / 1100, 1); el.textContent = fmt(Math.round(end * (1 - Math.pow(1 - p, 3)))); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }), { threshold: .6 });
+  nums.forEach(n => io.observe(n));
+})();
 (() => {
   const rows = [...document.querySelectorAll(".tl-row")], items = [...document.querySelectorAll(".cv-item")];
   const typeBtns = [...document.querySelectorAll(".cv-filters button")], skillBtns = [...document.querySelectorAll(".skills button")];
