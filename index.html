@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Gallery — Amy X. Chen</title>
+<meta name="description" content="Charts and interactive data work on applied AI, real estate, infrastructure and planning, by Amy X. Chen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --ink: #000; --paper: #fff; --muted: #5c5c5c; --rule: #000; --hair: #d9d9d9; --accent: #a51c30;
+  /* Google Sans matches the charts and is served free by Google Fonts */
+  --sans: "Google Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 var(--sans); }
+a { color: inherit; }
+.wrap { max-width: 1440px; margin: 0 auto; padding: 0 32px; }
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--rule);
+  font: 500 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+.top nav a { text-decoration: none; margin-left: 24px; }
+.top nav a:hover { color: var(--accent); }
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 56px 0 40px; border-bottom: 1px solid var(--rule); align-items: end; }
+.hero h1 { margin: 0; font-weight: 700; font-size: clamp(56px, 10vw, 152px); line-height: .88; letter-spacing: -.045em; }
+.hero p { margin: 0; font-size: clamp(18px, 1.7vw, 24px); line-height: 1.35; max-width: 34ch; }
+.hero .count { display: block; margin-top: 20px; font: 400 13px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 16px 0; border-bottom: 1px solid var(--rule); font: 500 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+.filters span { color: var(--muted); margin-right: 4px; }
+.filters button { font: inherit; letter-spacing: inherit; text-transform: inherit; background: none; border: 0; padding: 4px 0; cursor: pointer; color: var(--ink); border-bottom: 2px solid transparent; }
+.filters button:hover { color: var(--accent); }
+.filters button[aria-pressed="true"] { border-bottom-color: var(--accent); color: var(--accent); }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; padding: 40px 0 16px; border-bottom: 1px solid var(--rule); }
+.section-head h2 { margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -.02em; }
+.section-head span { font: 400 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 32px; }
+.card { padding: 20px 0 40px; border-bottom: 1px solid var(--hair); min-width: 0; }
+.card[hidden] { display: none; }
+.card-head { display: flex; gap: 16px; align-items: baseline; margin-bottom: 14px; font: 400 12px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+.num { font-weight: 500; }
+.meta { color: var(--muted); }
+.frame { display: block; border: 1px solid var(--ink); aspect-ratio: 4 / 3; overflow: hidden; background: #fff; }
+.frame img { width: 100%; height: 100%; object-fit: contain; display: block; transition: transform .3s ease; }
+.frame:hover img { transform: scale(1.03); }
+.card h3 { margin: 18px 0 8px; font-size: 22px; line-height: 1.15; font-weight: 700; letter-spacing: -.015em; }
+.takeaway { margin: 0 0 10px; font-size: 15px; }
+.context { margin: 0 0 10px; font: 400 12px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.sources { list-style: none; padding: 10px 0 0; margin: 0; border-top: 1px solid var(--hair); font-size: 13px; color: var(--muted); }
+.sources li { padding: 3px 0; }
+.sources .link { font-family: var(--mono); font-size: 11.5px; overflow-wrap: anywhere; color: var(--ink); }
+.sources a { text-decoration: none; }
+.sources a:hover, .open:hover { color: var(--accent); text-decoration: underline; }
+.open { display: inline-block; margin-top: 12px; font: 500 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .06em; text-decoration: none; }
+footer { margin-top: 64px; padding: 24px 0 48px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  font: 400 12px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) {
+  .wrap { padding: 0 16px; }
+  .hero { grid-template-columns: 1fr; padding: 36px 0 28px; }
+  .grid { grid-template-columns: 1fr; }
+  .top nav a { margin-left: 14px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span>Amy X. Chen</span>
+    <nav><a href="#charts">Charts</a><a href="#interactive">Interactive</a><a href="https://github.com/amyxqc" target="_blank" rel="noopener">GitHub ↗</a></nav>
+  </header>
+  <section class="hero">
+    <h1>Data<br>Gallery</h1>
+    <p>Charts and interactive work on how data and AI can make real estate, infrastructure and planning decisions faster and better grounded.
+      <span class="count">2 charts · 3 interactive projects · every number sourced</span></p>
+  </section>
+  <div class="filters" role="group" aria-label="Filter by topic"><span>Filter</span><button data-tag="" aria-pressed="true">All</button><button data-tag="Climate risk">Climate risk</button><button data-tag="Governance">Governance</button><button data-tag="Infrastructure">Infrastructure</button><button data-tag="Maps">Maps</button><button data-tag="Permitting">Permitting</button><button data-tag="Real estate">Real estate</button></div>
+
+  <div class="section-head" id="charts"><h2>Charts</h2><span>Click a chart for full size</span></div>
+  <div class="grid">
+<article class="card" data-tags="Climate risk|Real estate">
+  <div class="card-head"><span class="num">01</span><span class="meta">2026-10 · Climate risk · Real estate</span></div>
+  <a class="frame" href="charts/2026-10-05_climate-risk-on-listings.png" target="_blank" rel="noopener"><img src="charts/2026-10-05_climate-risk-on-listings.png" alt="A private flood model puts 40 times more of Chicago in the 100-year flood zone than FEMA" loading="lazy"></a>
+  <h3>A private flood model puts 40 times more of Chicago in the 100-year flood zone than FEMA</h3>
+  <p class="takeaway">FEMA&#x27;s map puts 0.3% of Chicago properties in the 100-year flood zone; First Street&#x27;s model, which counts heavy rain, puts 12.8% there. Buyers now see the private score next to the price.</p><p class="context">LinkedIn post: Climate risk is priced at the search</p><ul class="sources"><li>Federal Reserve Bank of Chicago (2020), using First Street Foundation data <span class="link">[<a href="https://www.chicagofed.org/publications/blogs/chicago-fed-insights/2020/chicago-flood-risk" target="_blank" rel="noopener">chicagofed.org/publications/blogs/chicago-fed-insights/2020/chicago-flood-risk</a>]</span></li></ul>
+</article>
+<article class="card" data-tags="Permitting|Infrastructure">
+  <div class="card-head"><span class="num">02</span><span class="meta">2026-10 · Permitting · Infrastructure</span></div>
+  <a class="frame" href="charts/2026-10-05_ai-and-permitting-speed.png" target="_blank" rel="noopener"><img src="charts/2026-10-05_ai-and-permitting-speed.png" alt="New York&#x27;s 1-year deadline covers less than half the wait for a siting permit" loading="lazy"></a>
+  <h3>New York&#x27;s 1-year deadline covers less than half the wait for a siting permit</h3>
+  <p class="takeaway">New York met its 1-year legal deadline on every renewable siting permit, but the wait before the deadline starts (getting an application declared complete) averaged 1,094 days in 2020–23.</p><p class="context">LinkedIn post: AI won&#x27;t fix permitting on its own</p><ul class="sources"><li>NY State Comptroller, audit 2023-S-52 (2024), p. 11, Fig. 1 <span class="link">[<a href="https://www.osc.ny.gov/files/state-agencies/audits/pdf/sga-2024-23s52.pdf#page=11" target="_blank" rel="noopener">osc.ny.gov/files/state-agencies/audits/pdf/sga-2024-23s52.pdf</a>]</span></li><li>NY ORES Annual Report 2025, p. 8 <span class="link">[<a href="https://dps.ny.gov/system/files/documents/2026/05/ores-annual-report-2025.pdf#page=8" target="_blank" rel="noopener">dps.ny.gov/system/files/documents/2026/05/ores-annual-report-2025.pdf</a>]</span></li></ul>
+</article>
+  </div>
+
+  <div class="section-head" id="interactive"><h2>Interactive</h2><span>Opens in a new tab</span></div>
+  <div class="grid">
+<article class="card" data-tags="Governance">
+  <div class="card-head"><span class="num">03</span><span class="meta">2026-10 · Governance</span></div>
+  <a class="frame" href="interactive/what-planners-decide.html" target="_blank" rel="noopener"><img src="thumbs/what-planners-decide.jpg" alt="What Planners Decide" loading="lazy"></a>
+  <h3>What Planners Decide</h3>
+  <p class="takeaway">Explorable bubble charts of 19,000+ decisions at NYC City Planning, Manhattan community boards, Boston and SF, with a real example for each topic.</p><a class="open" href="interactive/what-planners-decide.html" target="_blank" rel="noopener">Open project ↗</a>
+</article>
+<article class="card" data-tags="Maps|Real estate">
+  <div class="card-head"><span class="num">04</span><span class="meta">2026-07 · Maps · Real estate</span></div>
+  <a class="frame" href="https://amyxqc.github.io/auckland-night-grid/" target="_blank" rel="noopener"><img src="thumbs/auckland-night-grid.jpg" alt="Auckland // Night Grid" loading="lazy"></a>
+  <h3>Auckland // Night Grid</h3>
+  <p class="takeaway">A 3D data portrait of central Tāmaki Makaurau: 61,000 buildings with LiDAR heights, terrain, the Unitary Plan and transit, in one HTML file.</p><a class="open" href="https://amyxqc.github.io/auckland-night-grid/" target="_blank" rel="noopener">Open project ↗</a>
+</article>
+<article class="card" data-tags="Climate risk|Maps">
+  <div class="card-head"><span class="num">05</span><span class="meta">2026-04 · Climate risk · Maps</span></div>
+  <a class="frame" href="https://amyxqc.github.io/bronx-river/" target="_blank" rel="noopener"><img src="thumbs/bronx-river.jpg" alt="The Bronx River: A Story of Return" loading="lazy"></a>
+  <h3>The Bronx River: A Story of Return</h3>
+  <p class="takeaway">Two decades of restoration on an urban river: herring, dams, and the 1.4 million people who share the watershed.</p><a class="open" href="https://amyxqc.github.io/bronx-river/" target="_blank" rel="noopener">Open project ↗</a>
+</article>
+  </div>
+
+  <footer><span>© Amy X. Chen</span><span>Sources are linked under each chart, with page numbers where possible</span></footer>
+</div>
+<script>
+const buttons = document.querySelectorAll(".filters button");
+buttons.forEach(b => b.addEventListener("click", () => {
+  buttons.forEach(x => x.setAttribute("aria-pressed", x === b));
+  document.querySelectorAll(".card").forEach(c => {
+    c.hidden = b.dataset.tag !== "" && !c.dataset.tags.split("|").includes(b.dataset.tag);
+  });
+}));
+</script>
+</body>
+</html>

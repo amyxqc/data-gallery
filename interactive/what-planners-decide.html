@@ -1,0 +1,245 @@
+<title>What Planners Decide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one headline, three city panels side by side on one shared bubble scale, examples beneath each, table view at the end. */
+:root {
+  --bg: #F6F7F9;
+  --panel: #FFFFFF;
+  --fg: #16191F;
+  --muted: #565C66;
+  --faint: #DCE0E6;
+  --accent: #2A78D6;
+  --accent-fill: rgba(42, 120, 214, 0.14);
+  --accent-fill-hover: rgba(42, 120, 214, 0.30);
+  --display: "Source Serif 4", Georgia, serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14171C; --panel: #1C2027; --fg: #EEF1F5; --muted: #A9B1BC; --faint: #313742;
+    --accent: #3987E5; --accent-fill: rgba(57, 135, 229, 0.20); --accent-fill-hover: rgba(57, 135, 229, 0.40);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171C; --panel: #1C2027; --fg: #EEF1F5; --muted: #A9B1BC; --faint: #313742;
+  --accent: #3987E5; --accent-fill: rgba(57, 135, 229, 0.20); --accent-fill-hover: rgba(57, 135, 229, 0.40);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--body); margin: 0; }
+.wrap { max-width: 1320px; margin: 0 auto; padding-inline: 24px; padding-block: 36px 56px; display: flex; flex-direction: column; gap: 28px; }
+header { display: flex; flex-direction: column; gap: 8px; max-width: 70ch; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(28px, 4vw, 40px); line-height: 1.12; margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); margin: 0; }
+.panels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.panel { background: var(--panel); border: 1px solid var(--faint); border-radius: 10px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.panel h2 { font-family: var(--display); font-weight: 600; font-size: 22px; margin: 0; }
+.panel .src { font-size: 13px; color: var(--muted); margin: 0; }
+.panel .total { font-variant-numeric: tabular-nums; }
+.chart { width: 100%; aspect-ratio: 1 / 1; position: relative; }
+.chart svg { width: 100%; height: 100%; display: block; overflow: visible; }
+circle.b { fill: var(--accent-fill); stroke: var(--accent); stroke-width: 1.5; cursor: pointer; transition: fill .12s; }
+circle.b:hover, circle.b:focus { fill: var(--accent-fill-hover); outline: none; }
+text.lab { fill: var(--fg); font-family: var(--body); font-weight: 600; pointer-events: none; text-anchor: middle; }
+text.num { fill: var(--muted); font-family: var(--body); font-variant-numeric: tabular-nums; pointer-events: none; text-anchor: middle; }
+.examples { list-style: none; margin: 0; padding: 10px 0 0; border-top: 1px solid var(--faint); display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.examples b { font-weight: 600; }
+.examples span { color: var(--muted); }
+.tip { position: fixed; z-index: 5; max-width: 300px; background: var(--panel); color: var(--fg); border: 1px solid var(--faint); border-radius: 8px; padding: 10px 12px; font-size: 13px; box-shadow: 0 6px 24px rgba(0,0,0,.14); pointer-events: none; }
+.tip .t { font-weight: 600; }
+.tip .n { font-variant-numeric: tabular-nums; color: var(--muted); }
+.tip .ex { margin-top: 6px; }
+.notes { font-size: 13px; color: var(--muted); max-width: 90ch; display: flex; flex-direction: column; gap: 6px; }
+details { background: var(--panel); border: 1px solid var(--faint); border-radius: 10px; padding: 12px 16px; }
+summary { cursor: pointer; font-weight: 600; }
+.tablewrap { overflow-x: auto; margin-top: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--faint); white-space: nowrap; }
+td.r, th.r { text-align: right; }
+@media (max-width: 1100px) { .panels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .panels { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { circle.b { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Recent decision records</p>
+    <h1>What planning departments actually decide on</h1>
+    <p class="lede">Each bubble is a topic. Its area shows that topic’s share of the body’s decisions, so the panels compare what each one spends its time on; labels give the counts. Hover a bubble for a real example.</p>
+  </header>
+
+  <div class="panels" id="panels"></div>
+
+  <div class="notes">
+    <p><b>Sources.</b> New York City: Department of City Planning zoning application portal (NYC Open Data), plus Manhattan community-board resolutions tied to a place, from the Block Party archive. Boston: Planning Department Article 80 development review (Analyze Boston); Boston publishes far fewer planning records than San Francisco, and its Zoning Board of Appeal decided 4,217 appeals over the same years, mostly variances and housing. San Francisco: Planning Department decision records (DataSF), including Planning’s zoning sign-offs on liquor, food and entertainment permits.</p>
+    <p><b>Method.</b> Records were sorted into 11 topics by record type and keywords; expect 10–20% of records near a topic boundary to be misfiled. The four bodies have different jobs and publish different records, so compare the mix of topics, not the raw counts.</p>
+  </div>
+
+  <details>
+    <summary>Table view</summary>
+    <div class="tablewrap"><table id="table"></table></div>
+  </details>
+</div>
+
+<div class="tip" id="tip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const LABEL = {
+  licensing: "Licensing", variances: "Variances & permits", housing: "Housing", streets: "Streets & bike lanes",
+  historic: "Historic", rezonings: "Rezonings", energy: "Energy & utilities", parks: "Parks", schools: "Schools & health",
+  budget: "Budget", services: "Public services"
+};
+const SHORT = { licensing: "Licensing", variances: "Variances", housing: "Housing", streets: "Streets", historic: "Historic", rezonings: "Rezonings", energy: "Energy", parks: "Parks", schools: "Schools", budget: "Budget", services: "Services" };
+const LONG = {
+  licensing: "Business licensing (liquor, cannabis, cafés)", variances: "Variances & special permits", housing: "Housing & affordability",
+  streets: "Streets & transportation", historic: "Historic preservation", rezonings: "Rezonings & zoning text", energy: "Energy, utilities & infrastructure",
+  parks: "Parks & open space", schools: "Schools, health & facilities", budget: "Budget & capital", services: "Public services"
+};
+const CITIES = [
+  { id: "nycdcp", name: "NYC City Planning", src: "Department of City Planning, citywide", total: 1011,
+    counts: { variances: 437, housing: 211, rezonings: 89, parks: 83, streets: 65, historic: 62, licensing: 30, energy: 8, schools: 7, services: 5 },
+    ex: {
+      housing: "City of Yes for Housing Opportunity, approved 31–20 (Dec 2024); Midtown South plan for 9,500+ homes (Aug 2025)",
+      rezonings: "SoHo/NoHo rezoning, approved 43–5 (Dec 2021); Gowanus rezoning (Nov 2021)",
+      variances: "Mostly special permits and authorizations, such as the 503 Broadway special permit renewal (Aug 2024)",
+      energy: "City of Yes for Carbon Neutrality: rooftop solar, batteries, EV charging; approved 38–8–1 (Dec 2023)",
+      historic: "Reports on landmark designations, such as the Willoughby-Hart Historic District (Jun 2024)",
+      parks: "Public plazas and waterfront access certifications",
+      streets: "City map changes: mapping and demapping streets",
+      licensing: "Sidewalk and enclosed café approvals"
+    },
+    feature: ["housing", "rezonings", "energy"] },
+  { id: "nyccb", name: "NYC community boards", src: "Manhattan's 11 boards (Block Party)", total: 6733,
+    counts: { licensing: 4222, streets: 764, rezonings: 538, historic: 477, parks: 197, housing: 155, schools: 118, variances: 86, budget: 51, services: 7, energy: 6 },
+    ex: {
+      licensing: "CB4 recommended denying a cannabis dispensary on W 25th St, 34–0–2 (Feb 2024)",
+      streets: "CB2 supported the 6th Ave protected bike lane upgrade, 39–0 (Jun 2024)",
+      rezonings: "Board positions on rezonings such as SoHo/NoHo",
+      historic: "Advisory votes on landmark and historic-district applications",
+      parks: "Positions on park and open-space projects",
+      housing: "Positions on affordable housing proposals",
+      schools: "Health, human services and youth items",
+      variances: "Positions on variances before the Board of Standards and Appeals",
+      budget: "Annual district needs and budget requests"
+    },
+    feature: ["licensing", "streets"] },
+  { id: "bos", name: "Boston Planning", src: "Planning Department, Article 80 development review", total: 357,
+    counts: { housing: 272, variances: 37, schools: 24, parks: 13, streets: 3 },
+    ex: {
+      housing: "Large housing developments reviewed under Article 80",
+      schools: "840 Columbus Ave, more than 1,200 student beds, approved (Mar 2024)",
+      variances: "Projects needing zoning relief alongside review",
+      parks: "Projects with open-space components"
+    },
+    feature: ["housing", "schools"],
+    extra: [["Rezonings", "Squares + Streets zoning approved by the planning board (Mar 2024); Roslindale map approved (May 2025)"]] },
+  { id: "sf", name: "SF Planning", src: "Planning Department decision records", total: 11301,
+    counts: { licensing: 4821, variances: 1503, historic: 1155, energy: 936, housing: 909, streets: 769, rezonings: 426, parks: 177, schools: 168, budget: 37, services: 11 },
+    ex: {
+      licensing: "Zoning sign-offs on liquor, food and entertainment permits; cannabis retail at 4994 Mission St approved (Dec 2024)",
+      variances: "Rear-yard variance at 370 Lexington St (2025)",
+      historic: "Rainbow Flag at Harvey Milk Plaza designated a landmark (2024)",
+      energy: "Mostly sewer and water work and wireless facilities",
+      housing: "Housing Element for 82,069 homes adopted unanimously (Jan 2023)",
+      streets: "Valencia Street bike lane redesigned (Nov 2024)",
+      rezonings: "Family Zoning Plan adopted (Dec 2025)",
+      parks: "Upper Great Highway turned into a park (Nov 2024)",
+      budget: "Capital and general plan referrals"
+    },
+    feature: ["rezonings", "housing"] }
+];
+
+const fmt = d3.format(",");
+const pct = d3.format(".0%");
+const K = 150; // radius in viewBox units per sqrt(share of the body's decisions)
+const VB = 400;
+
+const tip = document.getElementById("tip");
+function showTip(e, city, key) {
+  const c = city.counts[key];
+  tip.replaceChildren();
+  const t = document.createElement("div"); t.className = "t"; t.textContent = LONG[key];
+  const n = document.createElement("div"); n.className = "n"; n.textContent = `${fmt(c)} decisions · ${pct(c / city.total)} of this body's records`;
+  tip.append(t, n);
+  if (city.ex[key]) { const x = document.createElement("div"); x.className = "ex"; x.textContent = city.ex[key]; tip.append(x); }
+  tip.hidden = false; moveTip(e);
+}
+function moveTip(e) {
+  const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = e.clientX + pad, y = e.clientY + pad;
+  if (x + w > innerWidth - 8) x = e.clientX - w - pad;
+  if (y + h > innerHeight - 8) y = e.clientY - h - pad;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip() { tip.hidden = true; }
+
+const panels = d3.select("#panels");
+for (const city of CITIES) {
+  city.nodes = Object.entries(city.counts).sort((a, b) => b[1] - a[1]).map(([key, v]) => ({ key, v, r: K * Math.sqrt(v / city.total) }));
+  d3.packSiblings(city.nodes);
+  city.enc = d3.packEnclose(city.nodes);
+}
+const R = d3.max(CITIES, c => c.enc.r) + 4; // every panel uses the same drawing size
+for (const city of CITIES) {
+  const p = panels.append("section").attr("class", "panel");
+  p.append("h2").text(city.name);
+  p.append("p").attr("class", "src").html(`${city.src} · <span class="total">${fmt(city.total)}</span> decisions`);
+
+  const nodes = city.nodes, enc = city.enc;
+  const svg = p.append("div").attr("class", "chart").append("svg")
+    .attr("viewBox", `${-R} ${-R} ${2 * R} ${2 * R}`)
+    .attr("role", "img").attr("aria-label", `${city.name}: ` + nodes.map(n => `${LONG[n.key]} ${fmt(n.v)}`).join(", "));
+  const g = svg.append("g").attr("transform", `translate(${-enc.x},${-enc.y})`);
+  const node = g.selectAll("g").data(nodes).join("g").attr("transform", d => `translate(${d.x},${d.y})`);
+  node.append("circle").attr("class", "b").attr("r", d => Math.max(d.r - 1, 0.5)).attr("tabindex", 0)
+    .attr("aria-label", d => `${LONG[d.key]}: ${fmt(d.v)}`)
+    .on("mouseenter", (e, d) => showTip(e, city, d.key)).on("mousemove", moveTip).on("mouseleave", hideTip)
+    .on("focus", (e, d) => { const b = e.target.getBoundingClientRect(); showTip({ clientX: b.right, clientY: b.top }, city, d.key); })
+    .on("blur", hideTip);
+  node.filter(d => d.r >= 30).each(function (d) {
+    const fs = Math.max(10, Math.min(18, d.r / 3.6));
+    const words = LABEL[d.key].split(" ");
+    const lines = words.length > 1 && LABEL[d.key].length * fs * 0.58 > d.r * 1.7 ? [words.slice(0, Math.ceil(words.length / 2)).join(" "), words.slice(Math.ceil(words.length / 2)).join(" ")] : [LABEL[d.key]];
+    const sel = d3.select(this);
+    lines.forEach((ln, i) => sel.append("text").attr("class", "lab").attr("font-size", fs).attr("y", (i - (lines.length - 1) / 2) * fs * 1.1 - fs * 0.35).text(ln));
+    sel.append("text").attr("class", "num").attr("font-size", fs * 0.85).attr("y", (lines.length - 1) / 2 * fs * 1.1 + fs * 0.95).text(fmt(d.v));
+  });
+  node.filter(d => d.r >= 16 && d.r < 30).each(function (d) {
+    const sel = d3.select(this), fs = Math.max(7, Math.min(10, d.r / 2.6));
+    sel.append("text").attr("class", "lab").attr("font-size", fs).attr("y", -fs * 0.15).text(SHORT[d.key]);
+    sel.append("text").attr("class", "num").attr("font-size", fs * 0.9).attr("y", fs * 1.05).text(fmt(d.v));
+  });
+
+  const ul = p.append("ul").attr("class", "examples");
+  for (const key of city.feature) {
+    const li = ul.append("li");
+    li.append("b").text(LABEL[key] + ": ");
+    li.append("span").text(city.ex[key]);
+  }
+  for (const [lab, txt] of (city.extra || [])) {
+    const li = ul.append("li");
+    li.append("b").text(lab + ": ");
+    li.append("span").text(txt);
+  }
+}
+
+// Table view
+const keys = Object.keys(LONG);
+const table = d3.select("#table");
+const head = table.append("thead").append("tr");
+head.append("th").text("Topic");
+CITIES.forEach(c => head.append("th").attr("class", "r").text(c.name));
+const body = table.append("tbody");
+for (const k of keys) {
+  const tr = body.append("tr");
+  tr.append("td").text(LONG[k]);
+  CITIES.forEach(c => tr.append("td").attr("class", "r").text(c.counts[k] ? fmt(c.counts[k]) : "–"));
+}
+const tot = body.append("tr");
+tot.append("td").append("b").text("All records (incl. other)");
+CITIES.forEach(c => tot.append("td").attr("class", "r").append("b").text(fmt(c.total)));
+</script>
