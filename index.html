@@ -86,6 +86,12 @@ dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 
 dt { text-transform: uppercase; letter-spacing: .06em; font-size: 11px; font-weight: 700; padding-top: 2px; }
 dd { margin: 0; color: var(--muted); }
 .proj-body p { margin: 0 0 16px; font-size: 17px; line-height: 1.6; text-align: justify; hyphens: auto; }
+.process { margin: 4px 0 20px; padding: 16px 18px; background: #f5f7fa; }
+.process summary { cursor: pointer; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: 12px; color: var(--blue); }
+.process dl { margin-top: 12px; grid-template-columns: 92px 1fr; gap: 10px 14px; font-size: 14.5px; }
+.process dd { color: var(--ink); line-height: 1.5; }
+.process ol { margin: 0; padding-left: 18px; }
+.process li { margin: 0 0 4px; }
 .cta { display: inline-block; margin: 4px 22px 0 0; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: 12px; text-decoration: none; color: var(--blue); border-bottom: 2px solid var(--blue); padding-bottom: 2px; }
 .cta:hover { color: var(--ink); border-color: var(--ink); }
 .shots { grid-column: 2; display: grid; gap: 12px; }
@@ -363,7 +369,7 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     </aside>
     <div class="canvas"><svg class="graph" viewBox="0 0 1000 660" role="img" aria-label="Network of projects, findings and the four questions they connect to"></svg></div>
   </div>
-  <script type="application/json" id="graph-data">{"nodes": [{"id": "me", "kind": "me", "label": "AMY X. CHEN"}, {"id": "aud-ai", "kind": "aud", "label": "AI SAFETY & GOVERNANCE", "lens": ["ai"], "q": "If some neighborhoods leave a thinner record, how do we keep these tools from widening the gap?"}, {"id": "aud-tech", "kind": "aud", "label": "TECH & GEOSPATIAL AI", "lens": ["tech"], "q": "What would a safe sandbox look like, from procurement to who owns the data?"}, {"id": "aud-plan", "kind": "aud", "label": "PLANNING & PUBLIC SECTOR", "lens": ["plan"], "q": "Agencies are wary of the word AI but warm to a tool they can see working. How do we earn that trust?"}, {"id": "aud-re", "kind": "aud", "label": "REAL ESTATE & INFRASTRUCTURE", "lens": ["re"], "q": "“Most at risk” is a value choice. Who should set that definition: markets, agencies, or communities?"}, {"id": "p1-1", "kind": "proj", "label": "Auckland 3D city", "num": "1.1", "lens": ["tech", "re"], "title": "Open-Data 3D City Modeling", "part": "Data systems", "date": "June 2026", "href": "#p1-1"}, {"id": "p1-2", "kind": "proj", "label": "Bike lanes → ridership", "num": "1.2", "lens": ["plan", "tech"], "title": "A Time Series Estimate of Protected Lane Returns on Citi Bike Demand", "part": "Data systems", "date": "Sept.–Dec. 2024", "href": "#p1-2"}, {"id": "p1-3", "kind": "proj", "label": "Good friction, bad friction", "num": "1.3", "lens": ["ai", "plan"], "title": "Good Friction, Bad Friction: Where AI Should Stop in Planning", "part": "Data systems", "date": "Oct. 2026", "href": "#p1-3"}, {"id": "p1-4", "kind": "proj", "label": "InfraScope data centers", "num": "1.4", "lens": ["re", "plan", "ai"], "title": "InfraScope: Data-Center Approval Screening", "part": "Data systems", "date": "Oct. 2026", "href": "#p1-4"}, {"id": "p2-1", "kind": "proj", "label": "Manhattan superblocks", "num": "2.1", "lens": ["plan", "tech"], "title": "Reimagine Manhattan: A Mathematical Modeling Approach for Superblock Development", "part": "Regeneration & infrastructure", "date": "June–Aug. 2024; ongoing", "href": "#p2-1"}, {"id": "p2-2", "kind": "proj", "label": "Allston energy & ICT", "num": "2.2", "lens": ["re", "plan"], "title": "A Tale of Two Grids: Energy & ICT in Allston, Boston", "part": "Regeneration & infrastructure", "date": "Sept. 2026", "href": "#p2-2"}, {"id": "p3-1", "kind": "proj", "label": "Wildfire haze mobility", "num": "3.1", "lens": ["tech", "plan"], "title": "Climate Resiliency Modeling: Mobility Under Extreme Weather", "part": "Climate risk & policy", "date": "Feb.–May 2025", "href": "#p3-1"}, {"id": "p3-2", "kind": "proj", "label": "Staten Island resilience", "num": "3.2", "lens": ["plan"], "title": "Storytelling for Coastal Resilience: Staten Island North Shore", "part": "Climate risk & policy", "date": "Oct.–Dec. 2023", "href": "#p3-2"}, {"id": "p3-3", "kind": "proj", "label": "Trucks, fumes, groceries", "num": "3.3", "lens": ["plan"], "title": "Trucks, Fumes, and Groceries", "part": "Climate risk & policy", "date": "2023; 2025", "href": "#p3-3"}, {"id": "p3-4", "kind": "proj", "label": "SF flood & property value", "num": "3.4", "lens": ["re"], "title": "Spatial Regression: Rethinking Proximity and Risk in San Francisco", "part": "Climate risk & policy", "date": "Feb.–May 2025", "href": "#p3-4"}, {"id": "p3-5", "kind": "proj", "label": "Sustainable cities policy", "num": "3.5", "lens": ["plan"], "title": "Policy Case Studies on Sustainable Cities", "part": "Climate risk & policy", "date": "2023–2025", "href": "#p3-5"}, {"id": "p3-6", "kind": "proj", "label": "126 years of housing news", "num": "3.6", "lens": ["ai", "plan"], "title": "Housing Policy Alignment Analytics Using Sentiment Methods", "part": "Climate risk & policy", "date": "2026", "href": "#p3-6"}, {"id": "p3-7", "kind": "proj", "label": "Flood Smart Assistant", "num": "3.7", "lens": ["ai", "tech", "plan"], "title": "Flood Smart Assistant: AI That Narrows, People Who Choose", "part": "Climate risk & policy", "date": "Aug. 2026 – present", "href": "#p3-7"}, {"id": "f0", "kind": "find", "label": "< ½", "lens": ["plan", "re", "ai"], "title": "of the wait for a New York renewable-energy siting permit is covered by its 1-year legal deadline. The rest happens before the clock starts.", "href": "#data"}, {"id": "f1", "kind": "find", "label": "40×", "lens": ["re", "ai"], "title": "more of Chicago sits in the 100-year flood zone on a private flood model than on FEMA's map. Buyers now see the private score next to the price.", "href": "#data"}, {"id": "f2", "kind": "find", "label": "52", "lens": ["ai", "tech", "plan"], "title": "of Chicago's 826 census tracts left for people to decide. AI set aside the other 774, which lose under every definition of flood risk.", "href": "#p3-7"}, {"id": "f3", "kind": "find", "label": "116", "lens": ["plan", "tech"], "title": "more Citi Bike trips a day for each added mile of protected bike lane in New York.", "href": "#p1-2"}, {"id": "f4", "kind": "find", "label": "61,228", "lens": ["tech", "re"], "title": "Auckland buildings given heights from open LiDAR and rendered in a browser, no software license needed.", "href": "#p1-1"}, {"id": "f5", "kind": "find", "label": "1st", "lens": ["tech", "ai"], "title": "place in Round 1 of the Google OASIS challenge at ACM SIGSPATIAL 2026, with an AI assistant for flood mitigation.", "href": "#p3-7"}], "links": [["me", "aud-ai"], ["me", "aud-tech"], ["me", "aud-plan"], ["me", "aud-re"], ["p1-1", "aud-tech"], ["p1-1", "aud-re"], ["p1-2", "aud-plan"], ["p1-2", "aud-tech"], ["p1-3", "aud-ai"], ["p1-3", "aud-plan"], ["p1-4", "aud-re"], ["p1-4", "aud-plan"], ["p1-4", "aud-ai"], ["p2-1", "aud-plan"], ["p2-1", "aud-tech"], ["p2-2", "aud-re"], ["p2-2", "aud-plan"], ["p3-1", "aud-tech"], ["p3-1", "aud-plan"], ["p3-2", "aud-plan"], ["p3-3", "aud-plan"], ["p3-4", "aud-re"], ["p3-5", "aud-plan"], ["p3-6", "aud-ai"], ["p3-6", "aud-plan"], ["p3-7", "aud-ai"], ["p3-7", "aud-tech"], ["p3-7", "aud-plan"], ["f0", "aud-plan"], ["f1", "aud-re"], ["f2", "p3-7"], ["f3", "p1-2"], ["f4", "p1-1"], ["f5", "p3-7"]]}</script>
+  <script type="application/json" id="graph-data">{"nodes": [{"id": "me", "kind": "me", "label": "AMY X. CHEN"}, {"id": "aud-ai", "kind": "aud", "label": "AI SAFETY & GOVERNANCE", "lens": ["ai"], "q": "If some neighborhoods leave a thinner record, how do we keep these tools from widening the gap?"}, {"id": "aud-tech", "kind": "aud", "label": "TECH & GEOSPATIAL AI", "lens": ["tech"], "q": "What would a safe sandbox look like, from procurement to who owns the data?"}, {"id": "aud-plan", "kind": "aud", "label": "PLANNING & PUBLIC SECTOR", "lens": ["plan"], "q": "Agencies are wary of the word AI but warm to a tool they can see working. How do we earn that trust?"}, {"id": "aud-re", "kind": "aud", "label": "REAL ESTATE & INFRASTRUCTURE", "lens": ["re"], "q": "“Most at risk” is a value choice. Who should set that definition: markets, agencies, or communities?"}, {"id": "p1-1", "kind": "proj", "label": "Auckland 3D city", "num": "1.1", "lens": ["tech", "re"], "title": "Open-Data 3D City Modeling", "part": "Data systems", "date": "June 2026", "href": "#p1-1"}, {"id": "p1-2", "kind": "proj", "label": "Bike lanes → ridership", "num": "1.2", "lens": ["plan", "tech"], "title": "A Time Series Estimate of Protected Lane Returns on Citi Bike Demand", "part": "Data systems", "date": "Sept.–Dec. 2024", "href": "#p1-2"}, {"id": "p1-3", "kind": "proj", "label": "Good friction, bad friction", "num": "1.3", "lens": ["ai", "plan"], "title": "Good Friction, Bad Friction: Where AI Should Stop in Planning", "part": "Data systems", "date": "Oct. 2026", "href": "#p1-3"}, {"id": "p1-4", "kind": "proj", "label": "InfraScope data centers", "num": "1.4", "lens": ["re", "plan", "ai"], "title": "InfraScope: Data-Center Approval Screening", "part": "Data systems", "date": "Oct. 2026", "href": "#p1-4"}, {"id": "p2-1", "kind": "proj", "label": "Manhattan superblocks", "num": "2.1", "lens": ["plan", "tech"], "title": "Reimagine Manhattan: A Mathematical Modeling Approach for Superblock Development", "part": "Regeneration & infrastructure", "date": "June–Aug. 2024; ongoing", "href": "#p2-1"}, {"id": "p2-2", "kind": "proj", "label": "Allston energy & ICT", "num": "2.2", "lens": ["re", "plan"], "title": "A Tale of Two Grids: Energy & ICT in Allston, Boston", "part": "Regeneration & infrastructure", "date": "Sept. 2026", "href": "#p2-2"}, {"id": "p3-1", "kind": "proj", "label": "Wildfire haze mobility", "num": "3.1", "lens": ["tech", "plan"], "title": "Climate Resiliency Modeling: Mobility Under Extreme Weather", "part": "Climate risk & policy", "date": "Feb.–May 2025", "href": "#p3-1"}, {"id": "p3-2", "kind": "proj", "label": "Staten Island resilience", "num": "3.2", "lens": ["plan"], "title": "Storytelling for Coastal Resilience: Staten Island North Shore", "part": "Climate risk & policy", "date": "Oct.–Dec. 2023", "href": "#p3-2"}, {"id": "p3-3", "kind": "proj", "label": "Trucks, fumes, groceries", "num": "3.3", "lens": ["plan"], "title": "Trucks, Fumes, and Groceries", "part": "Climate risk & policy", "date": "2023; 2025", "href": "#p3-3"}, {"id": "p3-4", "kind": "proj", "label": "SF flood & property value", "num": "3.4", "lens": ["re"], "title": "Spatial Regression: Rethinking Proximity and Risk in San Francisco", "part": "Climate risk & policy", "date": "Feb.–May 2025", "href": "#p3-4"}, {"id": "p3-5", "kind": "proj", "label": "Sustainable cities policy", "num": "3.5", "lens": ["plan"], "title": "Policy Case Studies on Sustainable Cities", "part": "Climate risk & policy", "date": "2023–2025", "href": "#p3-5"}, {"id": "p3-6", "kind": "proj", "label": "126 years of housing news", "num": "3.6", "lens": ["ai", "plan"], "title": "From Reform to Crisis: Reconstructing the Public Narrative of NYC Public Housing, 1900–2026", "part": "Climate risk & policy", "date": "", "href": "#p3-6"}, {"id": "p3-7", "kind": "proj", "label": "Flood Smart Assistant", "num": "3.7", "lens": ["ai", "tech", "plan"], "title": "Flood Smart Assistant: AI That Narrows, People Who Choose", "part": "Climate risk & policy", "date": "Aug. 2026 – present", "href": "#p3-7"}, {"id": "f0", "kind": "find", "label": "< ½", "lens": ["plan", "re", "ai"], "title": "of the wait for a New York renewable-energy siting permit is covered by its 1-year legal deadline. The rest happens before the clock starts.", "href": "#data"}, {"id": "f1", "kind": "find", "label": "40×", "lens": ["re", "ai"], "title": "more of Chicago sits in the 100-year flood zone on a private flood model than on FEMA's map. Buyers now see the private score next to the price.", "href": "#data"}, {"id": "f2", "kind": "find", "label": "52", "lens": ["ai", "tech", "plan"], "title": "of Chicago's 826 census tracts left for people to decide. AI set aside the other 774, which lose under every definition of flood risk.", "href": "#p3-7"}, {"id": "f3", "kind": "find", "label": "116", "lens": ["plan", "tech"], "title": "more Citi Bike trips a day for each added mile of protected bike lane in New York.", "href": "#p1-2"}, {"id": "f4", "kind": "find", "label": "61,228", "lens": ["tech", "re"], "title": "Auckland buildings given heights from open LiDAR and rendered in a browser, no software license needed.", "href": "#p1-1"}, {"id": "f5", "kind": "find", "label": "1st", "lens": ["tech", "ai"], "title": "place in Round 1 of the Google OASIS challenge at ACM SIGSPATIAL 2026, with an AI assistant for flood mitigation.", "href": "#p3-7"}], "links": [["me", "aud-ai"], ["me", "aud-tech"], ["me", "aud-plan"], ["me", "aud-re"], ["p1-1", "aud-tech"], ["p1-1", "aud-re"], ["p1-2", "aud-plan"], ["p1-2", "aud-tech"], ["p1-3", "aud-ai"], ["p1-3", "aud-plan"], ["p1-4", "aud-re"], ["p1-4", "aud-plan"], ["p1-4", "aud-ai"], ["p2-1", "aud-plan"], ["p2-1", "aud-tech"], ["p2-2", "aud-re"], ["p2-2", "aud-plan"], ["p3-1", "aud-tech"], ["p3-1", "aud-plan"], ["p3-2", "aud-plan"], ["p3-3", "aud-plan"], ["p3-4", "aud-re"], ["p3-5", "aud-plan"], ["p3-6", "aud-ai"], ["p3-6", "aud-plan"], ["p3-7", "aud-ai"], ["p3-7", "aud-tech"], ["p3-7", "aud-plan"], ["f0", "aud-plan"], ["f1", "aud-re"], ["f2", "p3-7"], ["f3", "p1-2"], ["f4", "p1-1"], ["f5", "p3-7"]]}</script>
 </section>
 
   <section class="band" id="found">
@@ -385,8 +391,8 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
   <span class="wtitle">Open-Data 3D City Modeling</span><span class="wsub">Digital surface and terrain model differencing, and an open-data contribution pipeline</span></a><a class="wcard" id="p1-2" href="#p1-2" data-part="1" data-lens="plan tech">
   <span class="wimg"><img src="work/citibike-lanes.jpg" alt="" loading="lazy"></span><span class="wmeta"><span class="pnum">1.2</span><span class="wpart">Data systems</span></span>
   <span class="wtitle">A Time Series Estimate of Protected Lane Returns on Citi Bike Demand</span><span class="wsub">What 50 miles a year of protected bike lanes does to ridership</span></a><a class="wcard wide" id="p1-3" href="#p1-3" data-part="1" data-lens="ai plan">
-  <span class="wimg"><img src="work/talk-ai-staircase.jpg" alt="" loading="lazy"></span><span class="wmeta"><span class="pnum">1.3</span><span class="wpart">Data systems</span></span>
-  <span class="wtitle">Good Friction, Bad Friction: Where AI Should Stop in Planning</span><span class="wsub">A lightning talk on AI as a tool for planners, and the line it shouldn&#x27;t cross</span></a><a class="wcard" id="p1-4" href="#p1-4" data-part="1" data-lens="re plan ai">
+  <span class="wimg"><img src="work/talk-outline.jpg" alt="" loading="lazy"></span><span class="wmeta"><span class="pnum">1.3</span><span class="wpart">Data systems</span></span>
+  <span class="wtitle">Good Friction, Bad Friction: Where AI Should Stop in Planning</span><span class="wsub">A lightning talk on where AI belongs in planning decisions</span></a><a class="wcard" id="p1-4" href="#p1-4" data-part="1" data-lens="re plan ai">
   <span class="wimg"><img src="work/infrascope-screening.jpg" alt="" loading="lazy"></span><span class="wmeta"><span class="pnum">1.4</span><span class="wpart">Data systems</span></span>
   <span class="wtitle">InfraScope: Data-Center Approval Screening</span><span class="wsub">When a town&#x27;s rules are stored as data, you can see which change would flip a decision</span></a><a class="wcard" id="p2-1" href="#p2-1" data-part="2" data-lens="plan tech">
   <span class="wimg"><img src="work/superblocks.jpg" alt="" loading="lazy"></span><span class="wmeta"><span class="pnum">2.1</span><span class="wpart">Regeneration &amp; infrastructure</span></span>
@@ -403,9 +409,9 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
   <span class="wtitle">Spatial Regression: Rethinking Proximity and Risk in San Francisco</span><span class="wsub">Who lives closest to flood risk, and what is it worth</span></a><a class="wcard" id="p3-5" href="#p3-5" data-part="3" data-lens="plan">
   <span class="wimg text"><b>3.5</b><i>Curriculum and national sustainability reporting</i></span><span class="wmeta"><span class="pnum">3.5</span><span class="wpart">Climate risk &amp; policy</span></span>
   <span class="wtitle">Policy Case Studies on Sustainable Cities</span><span class="wsub">Curriculum and national sustainability reporting</span></a><a class="wcard" id="p3-6" href="#p3-6" data-part="3" data-lens="ai plan">
-  <span class="wimg"><img src="work/housing-sentiment.jpg" alt="" loading="lazy"></span><span class="wmeta"><span class="pnum">3.6</span><span class="wpart">Climate risk &amp; policy</span></span>
-  <span class="wtitle">Housing Policy Alignment Analytics Using Sentiment Methods</span><span class="wsub">126 years of New York Times coverage of Lower East Side housing</span></a><a class="wcard wide" id="p3-7" href="#p3-7" data-part="3" data-lens="ai tech plan">
-  <span class="wimg"><img src="work/flood-assistant.jpg" alt="" loading="lazy"></span><span class="wmeta"><span class="pnum">3.7</span><span class="wpart">Climate risk &amp; policy</span></span>
+  <span class="wimg"><img src="work/housing-frames.jpg" alt="" loading="lazy"></span><span class="wmeta"><span class="pnum">3.6</span><span class="wpart">Climate risk &amp; policy</span></span>
+  <span class="wtitle">From Reform to Crisis: Reconstructing the Public Narrative of NYC Public Housing, 1900–2026</span><span class="wsub">126 years of New York Times coverage, read as data</span></a><a class="wcard wide" id="p3-7" href="#p3-7" data-part="3" data-lens="ai tech plan">
+  <span class="wimg"><img src="work/flood-assistant-v2.jpg" alt="" loading="lazy"></span><span class="wmeta"><span class="pnum">3.7</span><span class="wpart">Climate risk &amp; policy</span></span>
   <span class="wtitle">Flood Smart Assistant: AI That Narrows, People Who Choose</span><span class="wsub">Google OASIS 2026 Student Challenge, first place (Round 1), ACM SIGSPATIAL</span></a></div>
   <p class="wempty" hidden>Nothing in this part for this lens. <button data-clear>Show all</button></p>
   <template id="tpl-p1-1"><p class="dpart">Part 1 · Data-Driven Urban Systems &amp; Spatial Analytics</p><article class="project">
@@ -416,7 +422,14 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Independent geospatial product, sole author</dd><dt>Date</dt><dd>June 2026</dd><dt>Stack</dt><dd>Python 3.11, WebGL, LiDAR raster processing (DSM/DEM), GitHub Actions</dd></dl>
   </div>
-  <div class="proj-body"><p>3D massing models drive density, shadow and real estate capacity analysis, but cities often choose between costly proprietary data and flat 2D records. In Auckland, OpenStreetMap footprints cover the city but mostly lack heights. A Python pipeline overlays the footprints on public municipal LiDAR to derive above-ground heights for 61,228 buildings, and renders the whole central city in a browser, with no software licenses needed.</p><a class="cta" href="https://amyxqc.github.io/auckland-night-grid/" target="_blank" rel="noopener">Live model ↗</a><a class="cta" href="https://github.com/amyxqc/auckland-night-grid" target="_blank" rel="noopener">Code ↗</a></div>
+  <div class="proj-body"><p>3D massing models drive density, shadow and real estate capacity analysis, but cities often choose between costly proprietary data and flat 2D records. In Auckland, OpenStreetMap footprints cover the city but mostly lack heights. A Python pipeline overlays the footprints on public municipal LiDAR to derive above-ground heights for 61,228 buildings, and renders the whole central city in a browser, with no software licenses needed.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>Can a city get a usable 3D model without paying for proprietary data?</dd>
+    <dt>Method</dt><dd><ol><li>Joined OpenStreetMap building footprints to Auckland&#x27;s public LiDAR.</li><li>Derived above-ground heights by differencing the surface and terrain models.</li><li>Rendered 61,228 buildings in the browser with WebGL, with no software licenses.</li><li>Automated the pipeline with GitHub Actions so new open data flows in.</li></ol></dd>
+    <dt>My role</dt><dd>Sole author. I scoped it, built it and shipped it as an independent product.</dd>
+  </dl>
+</details><a class="cta" href="https://amyxqc.github.io/auckland-night-grid/" target="_blank" rel="noopener">Live model ↗</a><a class="cta" href="https://github.com/amyxqc/auckland-night-grid" target="_blank" rel="noopener">Code ↗</a></div>
   <div class="shots n1"><a class="shot" href="work/auckland-3d.jpg" target="_blank" rel="noopener"><img src="work/auckland-3d.jpg" alt="Open-Data 3D City Modeling" loading="lazy"></a></div>
 </article></template><template id="tpl-p1-2"><p class="dpart">Part 1 · Data-Driven Urban Systems &amp; Spatial Analytics</p><article class="project">
   <div class="proj-head">
@@ -426,18 +439,32 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Independent study, Urban Systems Engineering Lab, Columbia</dd><dt>Supervisor</dt><dd>Prof. Markus Schläpfer</dd><dt>Date</dt><dd>Sept.–Dec. 2024</dd></dl>
   </div>
-  <div class="proj-body"><p>The NYC Streets Plan requires at least 50 miles of protected bike lanes a year. I built a weekly 2022–2024 panel from Citi Bike trip records, weather data and Transportation Alternatives&#x27; lane tracker, then estimated the effect of lane expansion on ridership with regression models that have autoregressive errors. Each additional mile of bike lane was associated with about 116 more Citi Bike trips a day.</p></div>
+  <div class="proj-body"><p>The NYC Streets Plan requires at least 50 miles of protected bike lanes a year. I built a weekly 2022–2024 panel from Citi Bike trip records, weather data and Transportation Alternatives&#x27; lane tracker, then estimated the effect of lane expansion on ridership with regression models that have autoregressive errors. Each additional mile of bike lane was associated with about 116 more Citi Bike trips a day.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>Do the 50 miles of protected lanes the NYC Streets Plan requires each year actually add riders?</dd>
+    <dt>Method</dt><dd><ol><li>Built a weekly 2022–2024 panel from Citi Bike trips, weather data and Transportation Alternatives&#x27; lane tracker.</li><li>Estimated the effect of new lane miles with regressions that allow autoregressive errors.</li><li>Read the result as an association per mile, about 116 more trips a day, not a causal estimate.</li></ol></dd>
+    <dt>My role</dt><dd>Independent study under Prof. Markus Schläpfer. I designed the panel and ran the models.</dd>
+  </dl>
+</details></div>
   <div class="shots n1"><a class="shot" href="work/citibike-lanes.jpg" target="_blank" rel="noopener"><img src="work/citibike-lanes.jpg" alt="A Time Series Estimate of Protected Lane Returns on Citi Bike Demand" loading="lazy"></a></div>
 </article></template><template id="tpl-p1-3"><p class="dpart">Part 1 · Data-Driven Urban Systems &amp; Spatial Analytics</p><article class="project">
   <div class="proj-head">
     <span class="pnum">1.3</span>
     <h3>Good Friction, Bad Friction: Where AI Should Stop in Planning</h3>
-    <p class="sub">A lightning talk on AI as a tool for planners, and the line it shouldn&#x27;t cross</p>
+    <p class="sub">A lightning talk on where AI belongs in planning decisions</p>
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Lightning talk, Making Progress</dd><dt>Date</dt><dd>Oct. 2026</dd></dl>
   </div>
-  <div class="proj-body"><p>Some friction in planning is bad: digging through PDFs sorted by meeting date, guessing what a board already decided at an address. Some is good: hearing residents, negotiating conditions, deciding who bears the costs. The talk argues for handing the first kind to AI and agreeing up front on what it must never do (recommend votes, score applicants or neighborhoods, profile people who speak at meetings), so the time saved goes to judgment. It also lays out the evidence on what has measurably sped up approvals, graded by how sure we can be.</p></div>
-  <div class="shots n2"><a class="shot" href="work/talk-ai-staircase.jpg" target="_blank" rel="noopener"><img src="work/talk-ai-staircase.jpg" alt="Good Friction, Bad Friction: Where AI Should Stop in Planning" loading="lazy"></a><a class="shot" href="work/talk-evidence-table.jpg" target="_blank" rel="noopener"><img src="work/talk-evidence-table.jpg" alt="Good Friction, Bad Friction: Where AI Should Stop in Planning" loading="lazy"></a></div>
+  <div class="proj-body"><p>Every planning decision moves through loops: understanding existing conditions, analysis, a plan or decision, and years of implementation. Today, AI works best as a research assistant at the first two steps. The talk separates friction that protects the public, like hearings and negotiation, from friction that only slows things down, like records sorted by meeting date. Its thesis: data isn&#x27;t the problem, intention is. Say up front why data is collected and who it serves, start from what frustrates people rather than from AI literacy, and build the political will to let it change what gets decided and built.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>Where should AI stop in planning, and what would make the public trust it?</dd>
+    <dt>Method</dt><dd><ol><li>Sorted the tasks the Department of Labor lists for planners into good, bad and contested friction.</li><li>Followed a planning decision through four steps: existing conditions, analysis, decision and implementation.</li><li>Tested the argument on four cases: Block Party, the Flood Smart Assistant, Staten Island&#x27;s waterfront and Brownsville&#x27;s plans.</li><li>Graded the evidence on what has measurably sped up approvals, and linked every figure to its source.</li></ol></dd>
+    <dt>My role</dt><dd>Sole speaker. I built the argument, the evidence review and the live demo.</dd>
+  </dl>
+</details></div>
+  <div class="shots n2"><a class="shot" href="work/talk-outline.jpg" target="_blank" rel="noopener"><img src="work/talk-outline.jpg" alt="Good Friction, Bad Friction: Where AI Should Stop in Planning" loading="lazy"></a><a class="shot" href="work/talk-friction-map.jpg" target="_blank" rel="noopener"><img src="work/talk-friction-map.jpg" alt="Good Friction, Bad Friction: Where AI Should Stop in Planning" loading="lazy"></a></div>
 </article></template><template id="tpl-p1-4"><p class="dpart">Part 1 · Data-Driven Urban Systems &amp; Spatial Analytics</p><article class="project">
   <div class="proj-head">
     <span class="pnum">1.4</span>
@@ -446,7 +473,14 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Independent prototype, Massachusetts</dd><dt>Date</dt><dd>Oct. 2026</dd></dl>
   </div>
-  <div class="proj-body"><p>Massachusetts towns are writing their own data-center rules one at a time: moratoria, floor-area caps, megawatt caps, outright bans. InfraScope encodes them alongside flood, environmental-justice and grid layers. Test a 30 MW, 120,000 sq ft project in Southborough and it conflicts with the town&#x27;s 50,000 sq ft cap; shrink it and the hurdle becomes a special permit, which people decide. Every row cites its source, and missing data shows as unknown, never as allowed. Rules were compiled from news and minutes and are not yet verified against ordinance text.</p></div>
+  <div class="proj-body"><p>Massachusetts towns are writing their own data-center rules one at a time: moratoria, floor-area caps, megawatt caps, outright bans. InfraScope encodes them alongside flood, environmental-justice and grid layers. Test a 30 MW, 120,000 sq ft project in Southborough and it conflicts with the town&#x27;s 50,000 sq ft cap; shrink it and the hurdle becomes a special permit, which people decide. Every row cites its source, and missing data shows as unknown, never as allowed. Rules were compiled from news and minutes and are not yet verified against ordinance text.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>When a Massachusetts town writes its own data-center rules, which rule would flip a decision?</dd>
+    <dt>Method</dt><dd><ol><li>Compiled town rules from news coverage and meeting minutes, each with a citation.</li><li>Encoded them alongside flood, environmental-justice and grid layers.</li><li>Built a what-if check that shows which rule binds and what change would flip it.</li><li>Showed missing data as unknown, never as allowed.</li></ol></dd>
+    <dt>My role</dt><dd>Independent prototype. I designed and built it.</dd>
+  </dl>
+</details></div>
   <div class="shots n1"><a class="shot" href="work/infrascope-screening.jpg" target="_blank" rel="noopener"><img src="work/infrascope-screening.jpg" alt="InfraScope: Data-Center Approval Screening" loading="lazy"></a></div>
 </article></template><template id="tpl-p2-1"><p class="dpart">Part 2 · Urban Regeneration, Masterplanning &amp; Multimodal Integration</p><article class="project">
   <div class="proj-head">
@@ -456,7 +490,14 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Collaborative research, Columbia Summer Undergraduate Research in Mathematical Modeling</dd><dt>Supervisor</dt><dd>Prof. George Dragomir</dd><dt>Date</dt><dd>June–Aug. 2024; ongoing</dd><dt>Presented</dt><dd>Columbia Fall Research Symposium 2024; Jane Street Math Day 2024</dd></dl>
   </div>
-  <div class="proj-body"><p>A graph-theoretic model combines Manhattan&#x27;s street network with points of interest to score superblock suitability and simulate a seeded growth strategy for pilots, aimed at traffic calming, safety, public space and small business. I led the project definition and methodology, built the suitability model, made the visualizations, and did fieldwork in Barcelona in August 2025 to see how superblocks work day to day.</p></div>
+  <div class="proj-body"><p>A graph-theoretic model combines Manhattan&#x27;s street network with points of interest to score superblock suitability and simulate a seeded growth strategy for pilots, aimed at traffic calming, safety, public space and small business. I led the project definition and methodology, built the suitability model, made the visualizations, and did fieldwork in Barcelona in August 2025 to see how superblocks work day to day.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>Where in Manhattan would a superblock actually work?</dd>
+    <dt>Method</dt><dd><ol><li>Modeled the street network as a graph and joined points of interest.</li><li>Scored blocks for superblock suitability.</li><li>Simulated a seeded growth strategy for pilot sites.</li><li>Did fieldwork in Barcelona in August 2025 to see superblocks in daily use.</li></ol></dd>
+    <dt>My role</dt><dd>Collaborative research under Prof. George Dragomir. I led the project definition and methodology, built the suitability model and made the visuals.</dd>
+  </dl>
+</details></div>
   <div class="shots n2"><a class="shot" href="work/superblocks.jpg" target="_blank" rel="noopener"><img src="work/superblocks.jpg" alt="Reimagine Manhattan: A Mathematical Modeling Approach for Superblock Development" loading="lazy"></a><a class="shot" href="work/superblocks-barcelona.jpg" target="_blank" rel="noopener"><img src="work/superblocks-barcelona.jpg" alt="Reimagine Manhattan: A Mathematical Modeling Approach for Superblock Development" loading="lazy"></a></div>
 </article></template><template id="tpl-p2-2"><p class="dpart">Part 2 · Urban Regeneration, Masterplanning &amp; Multimodal Integration</p><article class="project">
   <div class="proj-head">
@@ -466,7 +507,14 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Collaborative, Harvard GSD First-Year Urban Planning Studio (STU 1121)</dd><dt>Team</dt><dd>Matheus Burity, Amy Chen, Hannah Ehler</dd><dt>Date</dt><dd>Sept. 2026</dd></dl>
   </div>
-  <div class="proj-body"><p>An existing-conditions study of Allston&#x27;s energy and telecom systems. Large buildings shifted from on-site gas toward grid electricity faster than the rest of Boston in 2022–24, but that grid still leans on gas-fired generation. 58 Article 80 projects (12.3 million sq ft) are in the pipeline, while Allston-Brighton has 1.6 approved small cells per 1,000 residents against 2.8 citywide. One electric utility and two wired providers serve the neighborhood, with no framework coordinating them. The team proposes community microgrids, open digital twins and polluter-pays levers.</p></div>
+  <div class="proj-body"><p>An existing-conditions study of Allston&#x27;s energy and telecom systems. Large buildings shifted from on-site gas toward grid electricity faster than the rest of Boston in 2022–24, but that grid still leans on gas-fired generation. 58 Article 80 projects (12.3 million sq ft) are in the pipeline, while Allston-Brighton has 1.6 approved small cells per 1,000 residents against 2.8 citywide. One electric utility and two wired providers serve the neighborhood, with no framework coordinating them. The team proposes community microgrids, open digital twins and polluter-pays levers.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>Who powers a neighborhood that Harvard and the data economy are rebuilding?</dd>
+    <dt>Method</dt><dd><ol><li>Compared large-building fuel use in Allston with the rest of Boston, 2022–24.</li><li>Mapped the 58 Article 80 projects in the development pipeline.</li><li>Compared small-cell approvals per resident with the city average.</li><li>Mapped the utility and providers that serve the neighborhood, then proposed microgrid, digital-twin and polluter-pays levers.</li></ol></dd>
+    <dt>My role</dt><dd>Three-person studio team with Matheus Burity and Hannah Ehler.</dd>
+  </dl>
+</details></div>
   <div class="shots n2"><a class="shot" href="work/allston-fuel-shift.jpg" target="_blank" rel="noopener"><img src="work/allston-fuel-shift.jpg" alt="A Tale of Two Grids: Energy &amp; ICT in Allston, Boston" loading="lazy"></a><a class="shot" href="work/allston-vulnerability.jpg" target="_blank" rel="noopener"><img src="work/allston-vulnerability.jpg" alt="A Tale of Two Grids: Energy &amp; ICT in Allston, Boston" loading="lazy"></a></div>
 </article></template><template id="tpl-p3-1"><p class="dpart">Part 3 · Climate Risk, Asset Analytics &amp; Socioeconomic Policy</p><article class="project">
   <div class="proj-head">
@@ -476,7 +524,14 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Collaborative, Sustainable Urban Systems Engineering</dd><dt>Supervisor</dt><dd>Prof. Markus Schläpfer</dd><dt>Date</dt><dd>Feb.–May 2025</dd></dl>
   </div>
-  <div class="proj-body"><p>News coverage suggested many New Yorkers kept traveling despite health advisories during the June 2023 haze. Using bikeshare, subway, bus and taxi data aligned with daily AQI and PM2.5, plus regressions controlling for season and weather, the project tests how travel actually changed by mode and neighborhood. I led the concept and methods and built the Citi Bike origin–destination analysis in Python.</p></div>
+  <div class="proj-body"><p>News coverage suggested many New Yorkers kept traveling despite health advisories during the June 2023 haze. Using bikeshare, subway, bus and taxi data aligned with daily AQI and PM2.5, plus regressions controlling for season and weather, the project tests how travel actually changed by mode and neighborhood. I led the concept and methods and built the Citi Bike origin–destination analysis in Python.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>Did New Yorkers actually change how they traveled during the June 2023 wildfire haze?</dd>
+    <dt>Method</dt><dd><ol><li>Aligned bikeshare, subway, bus and taxi data with daily AQI and PM2.5 readings.</li><li>Ran regressions that control for season and weather.</li><li>Built the Citi Bike origin–destination analysis in Python.</li></ol></dd>
+    <dt>My role</dt><dd>Team project under Prof. Markus Schläpfer. I led the concept and methods.</dd>
+  </dl>
+</details></div>
   <div class="shots n1"><a class="shot" href="work/haze-mobility.jpg" target="_blank" rel="noopener"><img src="work/haze-mobility.jpg" alt="Climate Resiliency Modeling: Mobility Under Extreme Weather" loading="lazy"></a></div>
 </article></template><template id="tpl-p3-2"><p class="dpart">Part 3 · Climate Risk, Asset Analytics &amp; Socioeconomic Policy</p><article class="project">
   <div class="proj-head">
@@ -486,7 +541,14 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Collaborative, Building Climate Justice: Co-Creative Coastal Resilience Planning</dd><dt>Date</dt><dd>Oct.–Dec. 2023</dd><dt>Presented</dt><dd>New York Climate Justice Summit 2024; CUNY–Columbia Environmental Justice Summit 2024</dd></dl>
   </div>
-  <div class="proj-body"><p>With the Staten Island Urban Center, the project combined census, street, building, air survey and education data with citizen science (Atmotube air sensors, approved drone flights producing point clouds and 3D site models) to show conditions that census averages hide.</p></div>
+  <div class="proj-body"><p>With the Staten Island Urban Center, the project combined census, street, building, air survey and education data with citizen science (Atmotube air sensors, approved drone flights producing point clouds and 3D site models) to show conditions that census averages hide.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>What do census averages hide about conditions along the North Shore&#x27;s MERC corridor?</dd>
+    <dt>Method</dt><dd><ol><li>Combined census, street, building, air survey and education data.</li><li>Added citizen science: Atmotube air sensors and approved drone flights.</li><li>Turned the drone imagery into point clouds and 3D site models.</li></ol></dd>
+    <dt>My role</dt><dd>Course team working with the Staten Island Urban Center. Presented at two climate justice summits in 2024.</dd>
+  </dl>
+</details></div>
   <div class="shots n1"><a class="shot" href="work/merc-corridor.jpg" target="_blank" rel="noopener"><img src="work/merc-corridor.jpg" alt="Storytelling for Coastal Resilience: Staten Island North Shore" loading="lazy"></a></div>
 </article></template><template id="tpl-p3-3"><p class="dpart">Part 3 · Climate Risk, Asset Analytics &amp; Socioeconomic Policy</p><article class="project">
   <div class="proj-head">
@@ -496,7 +558,14 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Academic and personal</dd><dt>Date</dt><dd>2023; 2025</dd><dt>Published</dt><dd>Barnard Columbia Urban Review</dd></dl>
   </div>
-  <div class="proj-body"><p>How highway siting, warehouses and distribution centers concentrate diesel exhaust near homes, schools and public housing, told through spatial analysis, history, maps and collage.</p></div>
+  <div class="proj-body"><p>How highway siting, warehouses and distribution centers concentrate diesel exhaust near homes, schools and public housing, told through spatial analysis, history, maps and collage.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>Why does diesel exhaust concentrate near homes and schools in Mott Haven–Port Morris?</dd>
+    <dt>Method</dt><dd><ol><li>Mapped highways, warehouses and distribution centers against homes, schools and public housing.</li><li>Traced the history of how the highways were sited.</li><li>Told the story through maps and collage.</li></ol></dd>
+    <dt>My role</dt><dd>Author. Published in the Barnard Columbia Urban Review.</dd>
+  </dl>
+</details></div>
   <div class="shots n1"><a class="shot" href="work/trucks-fumes.jpg" target="_blank" rel="noopener"><img src="work/trucks-fumes.jpg" alt="Trucks, Fumes, and Groceries" loading="lazy"></a></div>
 </article></template><template id="tpl-p3-4"><p class="dpart">Part 3 · Climate Risk, Asset Analytics &amp; Socioeconomic Policy</p><article class="project">
   <div class="proj-head">
@@ -506,7 +575,14 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Collaborative, Advanced GIS</dd><dt>Supervisor</dt><dd>Prof. Leah Meisterlin</dd><dt>Date</dt><dd>Feb.–May 2025</dd></dl>
   </div>
-  <div class="proj-body"><p>Block-group data with elevation, horizontal and combined 3D distance to flood zones. Little support for the idea that lower-income areas sit closer to flood risk; the most valuable land is often closest, along the waterfront. That raises a moral-hazard question: coastal protection may draw more high-value development into risky areas.</p></div>
+  <div class="proj-body"><p>Block-group data with elevation, horizontal and combined 3D distance to flood zones. Little support for the idea that lower-income areas sit closer to flood risk; the most valuable land is often closest, along the waterfront. That raises a moral-hazard question: coastal protection may draw more high-value development into risky areas.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>Do lower-income neighborhoods in San Francisco sit closer to flood risk?</dd>
+    <dt>Method</dt><dd><ol><li>Built a block-group dataset with elevation.</li><li>Measured horizontal, vertical and combined 3D distance to flood zones.</li><li>Ran spatial regressions of income and land value on that distance.</li></ol></dd>
+    <dt>My role</dt><dd>Course team under Prof. Leah Meisterlin.</dd>
+  </dl>
+</details></div>
   <div class="shots n1"><a class="shot" href="work/sf-flood-regression.jpg" target="_blank" rel="noopener"><img src="work/sf-flood-regression.jpg" alt="Spatial Regression: Rethinking Proximity and Risk in San Francisco" loading="lazy"></a></div>
 </article></template><template id="tpl-p3-5"><p class="dpart">Part 3 · Climate Risk, Asset Analytics &amp; Socioeconomic Policy</p><article class="project">
   <div class="proj-head">
@@ -516,18 +592,32 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Sustainability Policy and Management Research Program, Columbia Climate School</dd><dt>Date</dt><dd>2023–2025</dd></dl>
   </div>
-  <div class="proj-body"><p>Wrote a 200-page waste-management section for a Tencent-funded high school sustainability curriculum. As a research assistant on the China Sustainable Development Indicator System, contributed policy synthesis to the 2024 national indicator report, presented at COP29 in Baku, and case studies of Lima and Copenhagen for the 2025 global reports.</p></div>
+  <div class="proj-body"><p>Wrote a 200-page waste-management section for a Tencent-funded high school sustainability curriculum. As a research assistant on the China Sustainable Development Indicator System, contributed policy synthesis to the 2024 national indicator report, presented at COP29 in Baku, and case studies of Lima and Copenhagen for the 2025 global reports.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>How do cities turn sustainability goals into policy that can be taught and measured?</dd>
+    <dt>Method</dt><dd><ol><li>Wrote a 200-page waste-management section for a high school sustainability curriculum.</li><li>Synthesized policy for the China Sustainable Development Indicator System&#x27;s 2024 report.</li><li>Wrote case studies of Lima and Copenhagen for the 2025 global reports.</li></ol></dd>
+    <dt>My role</dt><dd>Research assistant, Sustainability Policy and Management Research Program, Columbia Climate School.</dd>
+  </dl>
+</details></div>
   
 </article></template><template id="tpl-p3-6"><p class="dpart">Part 3 · Climate Risk, Asset Analytics &amp; Socioeconomic Policy</p><article class="project">
   <div class="proj-head">
     <span class="pnum">3.6</span>
-    <h3>Housing Policy Alignment Analytics Using Sentiment Methods</h3>
-    <p class="sub">126 years of New York Times coverage of Lower East Side housing</p>
+    <h3>From Reform to Crisis: Reconstructing the Public Narrative of NYC Public Housing, 1900–2026</h3>
+    <p class="sub">126 years of New York Times coverage, read as data</p>
     <span class="bar"></span>
-    <dl><dt>Type</dt><dd>Sole author</dd><dt>Date</dt><dd>2026</dd><dt>Methods</dt><dd>NYT Archive API, VADER with custom lexicons, frame classification, Bai–Perron structural breaks</dd></dl>
+    <dl><dt>Type</dt><dd>Sole author; short paper</dd><dt>Origin</dt><dd>Economics seminar on the economic history of NYC, Prof. Donald Davis, Columbia</dd><dt>Venue</dt><dd>NYU Urban Systems Symposium, 2026</dd><dt>Methods</dt><dd>NYT Archive API, VADER with a housing lexicon, semantic-drift correction, frame classification, Bai–Perron structural breaks</dd></dl>
   </div>
-  <div class="proj-body"><p>10,118 New York Times articles (1900–April 2026) on housing in Manhattan and the Lower East Side, scored for sentiment with domain lexicons and drift-aware scoring, then tested for structural breaks in how the paper framed public housing.</p></div>
-  <div class="shots n1"><a class="shot" href="work/housing-sentiment.jpg" target="_blank" rel="noopener"><img src="work/housing-sentiment.jpg" alt="Housing Policy Alignment Analytics Using Sentiment Methods" loading="lazy"></a></div>
+  <div class="proj-body"><p>Public housing is usually judged by outcomes like income, crime and schooling. This paper asks what the public record said while the programs were being built. Across 10,118 New York Times articles from 1900 to 2026, the coverage moves from reform to construction, conflict, pathology and crisis. Conflict comes first: it rises from 7.9% of articles in the 1930s to 17.5% in the 1950s and 27.1% in the 1970s, while language about pathology stays below 3% until the 1970s. The last structural break in sentiment falls in 1954, fifteen years before the Brooke Amendment, so the public story had already turned before the funding cuts.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>In what order did public housing lose legitimacy in the public record, and did the story turn before the money did?</dd>
+    <dt>Method</dt><dd><ol><li>Pulled 10,118 articles from the New York Times Archive API, 1900–2026.</li><li>Scored sentiment with VADER plus a housing lexicon, correcting for words like “clearance” and “project” whose meaning drifted.</li><li>Classified each article into five frames: reform, construction, conflict, pathology and crisis.</li><li>Tested for structural breaks in annual sentiment with the Bai–Perron method.</li></ol></dd>
+    <dt>My role</dt><dd>Sole author. It began as a Columbia economics seminar paper with Prof. Donald Davis, and I extended the corpus to 2026 for the NYU Urban Systems Symposium.</dd>
+  </dl>
+</details></div>
+  <div class="shots n2"><a class="shot" href="work/housing-frames.jpg" target="_blank" rel="noopener"><img src="work/housing-frames.jpg" alt="From Reform to Crisis: Reconstructing the Public Narrative of NYC Public Housing, 1900–2026" loading="lazy"></a><a class="shot" href="work/housing-sentiment.jpg" target="_blank" rel="noopener"><img src="work/housing-sentiment.jpg" alt="From Reform to Crisis: Reconstructing the Public Narrative of NYC Public Housing, 1900–2026" loading="lazy"></a></div>
 </article></template><template id="tpl-p3-7"><p class="dpart">Part 3 · Climate Risk, Asset Analytics &amp; Socioeconomic Policy</p><article class="project">
   <div class="proj-head">
     <span class="pnum">3.7</span>
@@ -536,8 +626,15 @@ footer .fine { text-transform: uppercase; letter-spacing: .08em; font-size: 11px
     <span class="bar"></span>
     <dl><dt>Type</dt><dd>Collaborative (Chen et al.)</dd><dt>Date</dt><dd>Aug. 2026 – present</dd><dt>Award</dt><dd>Google DeepMind Student Travel Grant to ACM SIGSPATIAL 2026</dd></dl>
   </div>
-  <div class="proj-body"><p>Four defensible definitions of flood risk in Chicago (exposure, economic loss, social vulnerability, recovery capacity) produce four different top-40 lists that share no tract. Instead of picking one, the assistant sets aside the 774 of 826 census tracts that lose under every definition, a step that needs no value judgment, and leaves 52 for people to decide. It records who chose and why.</p></div>
-  <div class="shots n2"><a class="shot" href="work/flood-assistant.jpg" target="_blank" rel="noopener"><img src="work/flood-assistant.jpg" alt="Flood Smart Assistant: AI That Narrows, People Who Choose" loading="lazy"></a><a class="shot" href="work/flood-four-definitions.jpg" target="_blank" rel="noopener"><img src="work/flood-four-definitions.jpg" alt="Flood Smart Assistant: AI That Narrows, People Who Choose" loading="lazy"></a></div>
+  <div class="proj-body"><p>Four defensible definitions of flood risk in Chicago (exposure, economic loss, social vulnerability, recovery capacity) produce four top-40 lists that share no tract. Instead of blending them into one score, the assistant uses a Pareto method: a place is set aside only if another place is at least as vulnerable under all four. Citywide, that sets aside 774 of 826 census tracts and leaves 52 for people to decide. It works at the scale of the decision. Pick a planning region, a ward or a hand-drawn boundary and the comparison reruns there, and the list size can match the budget. Every number comes from a deterministic Python pipeline, and the tool records who chose and why.</p><details class="process" open>
+  <summary>How I approached it</summary>
+  <dl>
+    <dt>Question</dt><dd>When four reasonable definitions of flood risk disagree, how do you decide where to invest without hiding the value choice?</dd>
+    <dt>Method</dt><dd><ol><li>Computed four vulnerability definitions for Chicago&#x27;s 826 census tracts from 311, FEMA, CDC and census data.</li><li>Applied a Pareto method that sets aside only places another place beats under every definition.</li><li>Let the comparison rerun at any scale, from the whole city to a region, a ward or a drawn boundary, with the list size set by budget.</li><li>Kept every figure in deterministic Python, with the language model only explaining, and logged each decision.</li></ol></dd>
+    <dt>My role</dt><dd>Team project (Chen et al.) for the Google OASIS 2026 student challenge. First place in Round 1 and a Google DeepMind travel grant to ACM SIGSPATIAL 2026.</dd>
+  </dl>
+</details></div>
+  <div class="shots n2"><a class="shot" href="work/flood-assistant-v2.jpg" target="_blank" rel="noopener"><img src="work/flood-assistant-v2.jpg" alt="Flood Smart Assistant: AI That Narrows, People Who Choose" loading="lazy"></a><a class="shot" href="work/flood-four-definitions-v2.jpg" target="_blank" rel="noopener"><img src="work/flood-four-definitions-v2.jpg" alt="Flood Smart Assistant: AI That Narrows, People Who Choose" loading="lazy"></a></div>
 </article></template>
 </section>
 
